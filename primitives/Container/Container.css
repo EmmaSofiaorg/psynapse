@@ -1,0 +1,35 @@
+.container {
+  width: 100%;
+  max-width: 100%;
+  padding-left: var(--page-bleed);
+  padding-right: var(--page-bleed);
+}
+
+.container__wrapper {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.container--xs .container__wrapper {
+  max-width: var(--container-xs);
+}
+
+.container--sm .container__wrapper {
+  max-width: var(--container-sm);
+}
+
+.container--md .container__wrapper {
+  max-width: var(--container-md);
+}
+
+.container--lg .container__wrapper {
+  max-width: var(--container-lg);
+}
+
+.container--xl .container__wrapper {
+  max-width: var(--container-xl);
+}
+
+.container--fluid .container__wrapper {
+  max-width: 100%;
+}

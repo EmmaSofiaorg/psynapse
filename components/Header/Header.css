@@ -1,0 +1,33 @@
+.header {
+  background: transparent;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding-left: var(--page-bleed);
+  padding-right: var(--page-bleed);
+}
+
+.header__wrapper {
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: var(--container-xl);
+  margin: 0 auto;
+}
+
+.header__logo {
+  width: 200px;
+}
+
+.header__menu-button {
+}
+
+.header__menu {
+}
+
+.header--open {
+}

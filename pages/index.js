@@ -1,65 +1,50 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import Head from "next/head";
+
+import Container from "../primitives/Container";
+
+import Hero from "../components/Hero";
+import ProjectList from "../components/ProjectList";
+import Section from "../components/Section";
 
 export default function Home() {
   return (
-    <div className={styles.container}>
+    <div>
       <Head>
-        <title>Create Next App</title>
+        <title>Psynapse</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+      <Hero
+        variant="circle"
+        heading="Vi jobber for å endre lover og holdninger til bruk av psykedelika og
+          MDMA."
+      />
 
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
+      <Section
+        variant="light"
+        illustration="circle-grid"
+        label="Vår visjon"
+        heading="Vi aksepterer og anerkjenner at mennesker bruker psykedelika og MDMA til rekreasjonelle, spirituelle eller terapeutiske formål."
+      />
 
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
+      <ProjectList
+        items={[
+          {
+            to: "/arbeid/rusreform",
+            heading: "Rusreform",
+            text:
+              "Vi har bidratt både innspill til Rusreformutvalget og svar til Rusreformutvalgets utredning, og støtter forslaget om avkriminalisering.",
+          },
+          {
+            to: "/arbeid/tryggtripp",
+            heading: "Tryggtripp.no",
+            text:
+              "Trygg Tripp er en skadereduserende veileder for MDMA og psykedelika, med informasjon om dosering, sikkerhet og effekt.",
+          },
+        ]}
+      />
 
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
+      <footer>Footer</footer>
     </div>
-  )
+  );
 }

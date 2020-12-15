@@ -1,0 +1,47 @@
+:root {
+  /* SPACE */
+  --space-sm: 6px;
+  --space-md: 12px;
+  --space-lg: 24px;
+  --space-xl: 48px;
+  --space-xxl: 97px;
+  --page-bleed: var(--space-lg);
+
+  --header-height: 200px;
+
+  --ff-default: "Inter";
+  --ff-heading: "Space Grotesk";
+
+  --container-xs: 320px;
+  --container-sm: 640px;
+  --container-md: 880px;
+  --container-lg: 1100px;
+  --container-xl: 1680px; /* Max page width */
+
+  /* TEXT */
+  --fs-heading-lg: clamp(44px, 4.3vw, 80px);
+  --fs-heading-md: clamp(32px, 3.4vw, 64px);
+  --fs-heading-sm: clamp(26px, 2.5vw, 48px);
+  --fs-heading-sub: clamp(24px, 1.7vw, 32px);
+  --fs-ingress: clamp(19px, 1.4vw, 24px);
+  --fs-body: clamp(16px, 1.1vw, 20px);
+  --fs-link: clamp(16px, 1.1vw, 20px);
+  --fs-label: clamp(13px, 0.9vw, 16px);
+  --fs-footnote: clamp(13px, 1vw, 18px);
+
+  /* COLORS */
+  --color-vibrant-blue: #5f5aff;
+  --color-dusty-lilac: #f1f0ff;
+  --color-white: white;
+}
+
+@media (min-width: 800px) {
+  :root {
+    /* SPACE */
+    --space-sm: 8px;
+    --space-md: 16px;
+    --space-lg: 32px;
+    --space-xl: 64px;
+    --space-xxl: 128px;
+  }
+}

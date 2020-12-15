@@ -1,0 +1,29 @@
+.hero {
+  height: 90vh;
+  max-height: 800px;
+  display: flex;
+  align-items: flex-end;
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: 50vw;
+  padding-left: var(--page-bleed);
+  padding-right: var(--page-bleed);
+}
+
+.hero__wrapper {
+  margin: 0 auto;
+  width: 100%;
+  max-width: var(--container-xl);
+}
+
+.hero__content {
+  max-width: var(--container-lg);
+  padding-bottom: var(--space-xl);
+}
+
+.hero--circle {
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  background-size: 850px;
+  background-image: url("/assets/illustrations/bg.svg");
+}
