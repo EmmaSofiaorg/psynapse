@@ -1,6 +1,7 @@
 const withCSS = require("@zeit/next-css");
 module.exports = withCSS({
   cssModules: false,
+  target: "serverless",
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/,
