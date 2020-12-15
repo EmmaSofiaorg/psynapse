@@ -5,7 +5,7 @@
   --space-lg: 24px;
   --space-xl: 48px;
   --space-xxl: 97px;
-  --page-bleed: var(--space-lg);
+  --page-bleed: var(--space-xl);
 
   --header-height: 200px;
 
@@ -43,5 +43,6 @@
     --space-lg: 32px;
     --space-xl: 64px;
     --space-xxl: 128px;
+    --page-bleed: var(--space-xxl);
   }
 }

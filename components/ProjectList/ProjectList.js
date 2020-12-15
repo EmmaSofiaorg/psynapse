@@ -13,7 +13,7 @@ export default function ProjectList({ items = [] }) {
             <div className="project-list-item__counter">{i + 1}</div>
             <h2 className="project-list-item__title">{item.heading}</h2>
             <p className="project-list-item__text">{item.text}</p>
-            <i className="project-list-item__arrow">&#8594;</i>
+            <div className="project-list-item__arrow"></div>
           </a>
         </li>
       ))}
