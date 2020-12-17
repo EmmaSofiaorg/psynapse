@@ -1,5 +1,6 @@
 .header {
   --header-bg: transparent;
+  --color-outline: white;
 }
 
 .header {
@@ -70,7 +71,21 @@
   grid-template-columns: 1fr;
 }
 
-@media (min-width: 800px) {
+.header__subscribe-wrapper {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+}
+
+.header__subscribe-input {
+  font-size: var(--fs-body);
+  padding: var(--space-md);
+  border: 0;
+  outline: 0;
+  background: var(--color-white);
+  width: 100%;
+}
+
+@media (min-width: 1100px) {
   .header--open .header__menu {
     display: grid;
     grid-template-columns: 14fr 10fr;

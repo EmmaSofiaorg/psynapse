@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import cn from "../../utils/classnames";
 import "./Header.css";
+
+import Text from "../../primitives/Text";
 import Logo from "../../public/assets/illustrations/logo.svg";
 
 export default function Header() {
@@ -18,7 +20,7 @@ export default function Header() {
   return (
     <header className={classNames}>
       <div className="header__wrapper">
-        <div className="header__logo">
+        <div onClick={() => setOpen(false)} className="header__logo">
           <Logo />
         </div>
         <button className="header__menu-button" onClick={() => setOpen(!open)}>
@@ -44,16 +46,25 @@ export default function Header() {
           </a>
         </nav>
         <div>
-          <input className="" />
-          <p>
+          <Text tag="p" variant="body">
             Psynapse er et nettverk som jobber for å skape anerkjennelse og
             forståelse for bruk av psykedelika og MDMA, både i rekreasjonelle,
             seremonielle eller terapeutiske former.
-          </p>
+          </Text>
           <hr />
-          <div>
-            En holdningsendring er nødvendig for å skape et åpent og bevisst
-            samfunn. Få siste nytt rett i innboksen din.
+          <div className="header__subscribe-wrapper">
+            <div></div>
+            <div>
+              <Text tag="p" variant="body">
+                En holdningsendring er nødvendig for å skape et åpent og bevisst
+                samfunn. Få siste nytt rett i innboksen din.
+              </Text>
+              <input
+                className="header__subscribe-input"
+                placeholder="Din epost"
+                type="email"
+              />
+            </div>
           </div>
         </div>
       </div>
