@@ -12,6 +12,7 @@
   font-family: var(--ff-heading);
   font-weight: 400;
   line-height: 1.1;
+  margin-bottom: 6rem;
 }
 
 .text--heading-md {
@@ -19,6 +20,7 @@
   font-size: var(--fs-heading-md);
   font-family: var(--ff-heading);
   font-weight: 400;
+  margin-bottom: 4rem;
 }
 
 .text--heading-sm {
@@ -26,6 +28,7 @@
   font-size: var(--fs-heading-sm);
   font-family: var(--ff-heading);
   font-weight: 400;
+  margin-bottom: 3rem;
 }
 
 .text--heading-sub {

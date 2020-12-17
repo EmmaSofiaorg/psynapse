@@ -6,6 +6,7 @@ body {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  font-size: var(--fs-body);
   color: var(--color-contrast);
   font-family: "Inter", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
     Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
@@ -40,6 +41,7 @@ button {
 
 a {
   font-family: inherit;
+  font-size: inherit;
   color: currentColor;
   text-decoration: none;
 }

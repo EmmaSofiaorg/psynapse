@@ -4,6 +4,7 @@ import "./Section.css";
 import CircleGrid from "../../public/assets/illustrations/circle-grid.svg";
 
 import Text from "../../primitives/Text";
+import Link from "../../primitives/Link";
 
 const Illustration = {
   "circle-grid": <CircleGrid />,
@@ -15,6 +16,7 @@ export default function Section({
   label,
   heading,
   body,
+  links = [],
   children,
 }) {
   const classNames = cn({
@@ -37,6 +39,11 @@ export default function Section({
           <Text tag="h2" variant="heading-sm">
             {heading}
           </Text>
+          {links.map((link, i) => (
+            <Link key={i} to={link.to} prefix="→">
+              {link.title}
+            </Link>
+          ))}
         </div>
       </div>
     </section>

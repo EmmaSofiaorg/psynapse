@@ -1,0 +1,23 @@
+.link {
+  color: currentColor;
+  display: flex;
+  align-items: center;
+}
+
+.link__prefix {
+  font-weight: 500;
+  color: var(--color-vibrant-blue);
+  padding-right: var(--space-md);
+}
+
+.link__postfix {
+  font-weight: 500;
+  color: var(--color-vibrant-blue);
+  padding-left: var(--space-md);
+}
+
+.link__el {
+  cursor: pointer;
+  text-decoration: underline;
+  font-size: var(--fs-link);
+}

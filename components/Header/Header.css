@@ -1,10 +1,5 @@
 .header {
-  --header-bg: transparent;
-  --color-outline: white;
-}
-
-.header {
-  background: var(--header-bg);
+  background: transparent;
   display: block;
   position: absolute;
   top: 0;
@@ -15,10 +10,11 @@
 }
 
 .header--open {
+  --color-outline: white;
+  background: var(--color-vibrant-blue);
   height: 100vh;
   color: var(--color-white);
   position: fixed;
-  --header-bg: var(--color-vibrant-blue);
   overflow-y: scroll;
 }
 

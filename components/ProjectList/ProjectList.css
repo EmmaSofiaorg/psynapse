@@ -1,10 +1,20 @@
 .project-list {
+}
+
+.project-list__description {
+  max-width: 800px;
+}
+
+.project-list__items {
+  counter-reset: item;
   margin: 0;
+  margin-top: var(--space-xl);
   padding: 0;
   list-style: none;
 }
 
 .project-list-item {
+  counter-increment: item;
   width: 100%;
   padding-top: var(--space-xl);
   padding-bottom: var(--space-xl);
@@ -15,6 +25,22 @@
 .project-list-item:hover {
   background-color: var(--color-vibrant-blue);
   color: var(--color-white);
+}
+
+.project-list-item:hover .project-list-item__counter {
+  color: var(--color-contrast);
+}
+
+.project-list-item__counter {
+  position: relative;
+}
+
+.project-list-item__counter::after {
+  content: counter(item);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
 }
 
 .project-list-item__wrapper {

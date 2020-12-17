@@ -25,9 +25,13 @@ export default function Home() {
         illustration="circle-grid"
         label="Vår visjon"
         heading="Vi aksepterer og anerkjenner at mennesker bruker psykedelika og MDMA til rekreasjonelle, spirituelle eller terapeutiske formål."
+        links={[{ title: "Les mer om oss", to: "test" }]}
       />
 
       <ProjectList
+        label="Våre prosjekter"
+        title="Senectus elementum non placerat et neque purus."
+        body="Praesent eu fringilla proin diam gravida. Sed nibh scelerisque interdum odio fusce mauris. Tortor amet magna interdum pellentesque facilisi sit."
         items={[
           {
             to: "/arbeid/rusreform",

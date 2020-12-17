@@ -3,11 +3,14 @@ import "../styles/variables.css";
 
 import outlineWatcher from "../utils/outlineWatcher";
 
-outlineWatcher();
-
 import BaseLayout from "../layout/BaseLayout";
+import { useEffect } from "react";
 
 function MyApp({ Component, pageProps }) {
+  useEffect(() => {
+    outlineWatcher();
+  }, []);
+
   return (
     <BaseLayout>
       <Component {...pageProps} />
