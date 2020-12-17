@@ -43,7 +43,7 @@
 
 .header__menu {
   display: none;
-  padding-bottom: var(--space-xl);
+  padding-bottom: var(--space-xxl);
 }
 
 .header__menu-page-link {
