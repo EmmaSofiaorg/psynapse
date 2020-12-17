@@ -18,6 +18,7 @@
   color: var(--color-white);
   position: fixed;
   --header-bg: var(--color-vibrant-blue);
+  overflow-y: scroll;
 }
 
 .header__wrapper {
@@ -45,6 +46,7 @@
 
 .header__menu {
   display: none;
+  padding-bottom: var(--space-xl);
 }
 
 .header__menu-page-link {
