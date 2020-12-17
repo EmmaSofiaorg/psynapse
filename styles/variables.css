@@ -7,7 +7,7 @@
   --space-xxl: 97px;
   --page-bleed: var(--space-xl);
 
-  --header-height: 200px;
+  --header-height: 120px;
 
   --ff-default: "Inter";
   --ff-heading: "Space Grotesk";
@@ -39,6 +39,7 @@
 
 @media (min-width: 800px) {
   :root {
+    --header-height: 200px;
     /* SPACE */
     --space-sm: 8px;
     --space-md: 16px;

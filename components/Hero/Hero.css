@@ -1,6 +1,5 @@
 .hero {
-  height: 90vh;
-  max-height: 800px;
+  height: 75vh;
   display: flex;
   align-items: flex-end;
   background-repeat: no-repeat;
@@ -24,6 +23,12 @@
 .hero--circle {
   background-repeat: no-repeat;
   background-position: bottom right;
-  background-size: 850px;
+  background-size: clamp(500px, 40vw, 850px);
   background-image: url("/assets/illustrations/bg.svg");
+}
+
+@media (min-width: 800px) {
+  .hero {
+    height: 90vh;
+  }
 }

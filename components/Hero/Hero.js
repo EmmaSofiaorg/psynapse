@@ -28,7 +28,7 @@ export default function Hero({
     >
       <div className="hero__wrapper">
         <div className="hero__content">
-          <Text tag="h1" variant="heading-lg">
+          <Text noMargin tag="h1" variant="heading-lg">
             {heading}
           </Text>
         </div>
