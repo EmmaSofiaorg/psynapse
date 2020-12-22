@@ -5,7 +5,8 @@
   --space-lg: 24px;
   --space-xl: 48px;
   --space-xxl: 97px;
-  --page-bleed: var(--space-xl);
+
+  --page-bleed: clamp(16px, 5.9vw, 75px);
 
   --header-height: 120px;
 
@@ -46,6 +47,5 @@
     --space-lg: 32px;
     --space-xl: 64px;
     --space-xxl: 128px;
-    --page-bleed: var(--space-xxl);
   }
 }
