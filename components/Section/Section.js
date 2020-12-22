@@ -48,7 +48,7 @@ export default function Section({
             </Text>
           )}
           {links.map((link, i) => (
-            <Link key={i} to={link.to} prefix="→">
+            <Link key={i} href={link.href} prefix="→">
               {link.title}
             </Link>
           ))}

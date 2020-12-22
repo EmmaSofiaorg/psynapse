@@ -1,12 +1,12 @@
 import Head from "next/head";
 
-import Container from "../primitives/Container";
+import Container from "../../primitives/Container";
 
-import Footer from "../components/Footer";
-import Hero from "../components/Hero";
-import ProjectList from "../components/ProjectList";
-import Section from "../components/Section";
-import DonationBox from "../components/DonationBox";
+import Footer from "../../components/Footer";
+import Hero from "../../components/Hero";
+import ProjectList from "../../components/ProjectList";
+import Section from "../../components/Section";
+import DonationBox from "../../components/DonationBox";
 
 export default function Home() {
   return (
@@ -18,8 +18,7 @@ export default function Home() {
 
       <Hero
         variant="circle"
-        heading="Vi jobber for å endre lover og holdninger til bruk av psykedelika og
-          MDMA."
+        heading="Rusreformen — en nødvendig omlegging av ruspolitikken"
       />
 
       <Section

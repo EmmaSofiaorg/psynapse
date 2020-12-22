@@ -17,7 +17,9 @@ export default function DonationBox() {
           sed a enim donec maecenas pulvinar morbi. Tristique rutrum nisl tellus
           enim pellentesque vitae. Mi volutpat sed tincidunt ipsum non.
         </Text>
-        <Link prefix="→">Les mer</Link>
+        <Link full prefix="→">
+          Les mer
+        </Link>
         <Illustration
           style={{ maxWidth: "200px", marginTop: "var(--space-xl)" }}
         />

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Link from "next/link";
 import cn from "../../utils/classnames";
 import "./Header.css";
 
@@ -20,30 +21,42 @@ export default function Header() {
   return (
     <header className={classNames}>
       <div className="header__wrapper">
-        <div onClick={() => setOpen(false)} className="header__logo">
-          <Logo />
-        </div>
+        <Link href="/">
+          <a onClick={() => setOpen(false)} className="header__logo">
+            <Logo />
+          </a>
+        </Link>
         <button className="header__menu-button" onClick={() => setOpen(!open)}>
           {open ? "Lukk" : "Meny"}
         </button>
       </div>
       <div className="header__menu">
         <nav className="header__menu-page-links">
-          <a className="header__menu-page-link" style={{ "--item-order": 1 }}>
-            Home
-          </a>
-          <a className="header__menu-page-link" style={{ "--item-order": 2 }}>
-            Rusreform
-          </a>
-          <a className="header__menu-page-link" style={{ "--item-order": 3 }}>
-            Psykedelika og MDMA
-          </a>
-          <a className="header__menu-page-link" style={{ "--item-order": 4 }}>
-            Støtt oss
-          </a>
-          <a className="header__menu-page-link" style={{ "--item-order": 5 }}>
-            Om oss
-          </a>
+          <Link href="/">
+            <a className="header__menu-page-link" style={{ "--item-order": 1 }}>
+              Home
+            </a>
+          </Link>
+          <Link href="/">
+            <a className="header__menu-page-link" style={{ "--item-order": 2 }}>
+              Rusreform
+            </a>
+          </Link>
+          <Link href="/">
+            <a className="header__menu-page-link" style={{ "--item-order": 3 }}>
+              Psykedelika og MDMA
+            </a>
+          </Link>
+          <Link href="/">
+            <a className="header__menu-page-link" style={{ "--item-order": 4 }}>
+              Støtt oss
+            </a>
+          </Link>
+          <Link href="/">
+            <a className="header__menu-page-link" style={{ "--item-order": 5 }}>
+              Om oss
+            </a>
+          </Link>
         </nav>
         <div>
           <Text tag="p" variant="body">

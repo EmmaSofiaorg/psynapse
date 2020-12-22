@@ -1,5 +1,5 @@
 import React from "react";
-import cn from "../../utils/classnames";
+import Link from "next/link";
 import "./ProjectList.css";
 import SimpleCircle from "../../public/assets/illustrations/simple-circle.svg";
 
@@ -19,14 +19,16 @@ export default function ProjectList({ label, title, body, items = [] }) {
       <ol className="project-list__items">
         {items.map((item, i) => (
           <li className="project-list-item" key={i}>
-            <a href={item.to} className="project-list-item__wrapper">
-              <div className="project-list-item__counter">
-                <SimpleCircle />
-              </div>
-              <h2 className="project-list-item__title">{item.heading}</h2>
-              <p className="project-list-item__text">{item.text}</p>
-              <div className="project-list-item__arrow"></div>
-            </a>
+            <Link href={item.href}>
+              <a className="project-list-item__wrapper">
+                <div className="project-list-item__counter">
+                  <SimpleCircle />
+                </div>
+                <h2 className="project-list-item__title">{item.heading}</h2>
+                <p className="project-list-item__text">{item.text}</p>
+                <div className="project-list-item__arrow"></div>
+              </a>
+            </Link>
           </li>
         ))}
       </ol>
