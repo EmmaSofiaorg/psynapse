@@ -1,7 +1,7 @@
 .footer {
   padding-left: var(--page-bleed);
   padding-right: var(--page-bleed);
-  padding-bottom: var(--space-xxl);
+  padding-bottom: var(--page-bleed);
 }
 
 .footer__wrapper {

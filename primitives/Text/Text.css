@@ -3,6 +3,7 @@
   font-size: var(--fs-body);
   font-family: var(--ff-default);
   font-weight: 400;
+  margin-top: 0;
   margin-bottom: 1rem;
 }
 
@@ -56,7 +57,7 @@
   font-family: var(--ff-default);
   text-transform: uppercase;
   font-weight: 700;
-  margin-bottom: 2rem;
+  margin-bottom: var(--space-md);
 }
 
 .text--footnote {

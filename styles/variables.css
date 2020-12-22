@@ -1,14 +1,14 @@
 :root {
   /* SPACE */
-  --space-sm: 6px;
-  --space-md: 12px;
-  --space-lg: 24px;
-  --space-xl: 48px;
-  --space-xxl: 97px;
+  --space-sm: clamp(8px, 3vw, 12px);
+  --space-md: clamp(12px, 5vw, 24px);
+  --space-lg: clamp(24px, 10vw, 48px);
+  --space-xl: clamp(48px, 15vw, 97px);
 
+  --space-xxl: clamp(97px, 20vw, 164px);
   --page-bleed: clamp(16px, 5.9vw, 75px);
 
-  --header-height: 120px;
+  --header-height: clamp(120px, 19.1vw, 200px);
 
   --ff-default: "Inter";
   --ff-heading: "Space Grotesk";
@@ -36,16 +36,4 @@
   --color-white: white;
   --color-contrast: #222222;
   --color-outline: var(--color-vibrant-blue);
-}
-
-@media (min-width: 800px) {
-  :root {
-    --header-height: 200px;
-    /* SPACE */
-    --space-sm: 8px;
-    --space-md: 16px;
-    --space-lg: 32px;
-    --space-xl: 64px;
-    --space-xxl: 128px;
-  }
 }

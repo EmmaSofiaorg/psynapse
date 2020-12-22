@@ -59,6 +59,8 @@
 .header__menu {
   display: none;
   padding-bottom: var(--space-xxl);
+  max-width: var(--container-xl);
+  margin: 0 auto;
 }
 
 .header__menu-page-link {

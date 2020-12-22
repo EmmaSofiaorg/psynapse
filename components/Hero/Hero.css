@@ -1,5 +1,6 @@
 .hero {
   height: 75vh;
+  max-height: 1200px;
   display: flex;
   align-items: flex-end;
   background-repeat: no-repeat;
@@ -17,18 +18,19 @@
 
 .hero__content {
   max-width: var(--container-lg);
-  padding-bottom: var(--space-xl);
+  padding-bottom: var(--space-xxl);
 }
 
 .hero--circle {
   background-repeat: no-repeat;
-  background-position: bottom right;
+  background-position-x: right;
+  background-position-y: calc(100% - var(--space-lg));
   background-size: clamp(500px, 40vw, 850px);
   background-image: url("/assets/illustrations/bg.svg");
 }
 
 @media (min-width: 800px) {
   .hero {
-    height: 90vh;
+    height: 100vh;
   }
 }
