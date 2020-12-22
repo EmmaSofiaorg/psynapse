@@ -1,0 +1,21 @@
+.footer {
+  padding-left: var(--page-bleed);
+  padding-right: var(--page-bleed);
+  padding-bottom: var(--space-xxl);
+}
+
+.footer__wrapper {
+  margin: 0 auto;
+  max-width: var(--container-xl);
+}
+
+.footer__links {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  margin-bottom: var(--space-xl);
+}
+
+.footer__links li {
+  margin-bottom: var(--space-md);
+}

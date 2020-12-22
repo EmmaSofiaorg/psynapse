@@ -7,6 +7,7 @@
   width: 100%;
   padding-left: var(--page-bleed);
   padding-right: var(--page-bleed);
+  z-index: 999;
 }
 
 .header--open {
@@ -29,7 +30,7 @@
 }
 
 .header__logo {
-  width: 200px;
+  width: clamp(170px, 13vw, 200px);
 }
 
 .header__menu-button {
@@ -39,6 +40,20 @@
   font-size: var(--fs-body);
   border: 0;
   background: none;
+}
+
+.header__menu-button::after {
+  vertical-align: center;
+  font-size: var(--fs-ingress);
+  padding-left: var(--space-md);
+}
+
+.header__menu-button::after {
+  content: "☰";
+}
+
+.header--open .header__menu-button::after {
+  content: "✕";
 }
 
 .header__menu {

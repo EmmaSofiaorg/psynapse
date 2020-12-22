@@ -1,0 +1,15 @@
+.donation-box {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: var(--space-xl);
+  width: 100%;
+  padding: var(--space-xl);
+  background: var(--color-dusty-lilac);
+}
+
+@media (min-width: 1100px) {
+  .donation-box {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}

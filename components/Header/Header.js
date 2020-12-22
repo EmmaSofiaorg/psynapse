@@ -24,7 +24,7 @@ export default function Header() {
           <Logo />
         </div>
         <button className="header__menu-button" onClick={() => setOpen(!open)}>
-          {open ? "Close" : "Meny"}
+          {open ? "Lukk" : "Meny"}
         </button>
       </div>
       <div className="header__menu">

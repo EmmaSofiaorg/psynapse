@@ -15,7 +15,7 @@
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr;
-  grid-gap: var(--space-xl);
+  grid-gap: var(--space-xxl);
 }
 
 .section__image-wrapper {
@@ -25,6 +25,14 @@
 
 .section--light {
   background-color: var(--color-dusty-lilac);
+}
+
+.section--reverse .section__wrapper > *:nth-child(1) {
+  order: 2;
+}
+
+.section--reverse .section__wrapper > *:nth-child(2) {
+  order: 1;
 }
 
 @media (min-width: 800px) {
