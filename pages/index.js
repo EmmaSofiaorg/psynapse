@@ -10,7 +10,7 @@ import ProjectList from "../components/ProjectList";
 import Section from "../components/Section";
 import DonationBox from "../components/DonationBox";
 
-export async function getStaticProps(context) {
+export async function getServerSideProps(context) {
   return {
     props: {
       subscription: await createSubscription(context, {
