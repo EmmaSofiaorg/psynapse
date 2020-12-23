@@ -1,4 +1,6 @@
 import Head from "next/head";
+import { createSubscription } from "../lib/api";
+import { useQuerySubscription } from "react-datocms";
 
 import Container from "../primitives/Container";
 
@@ -8,7 +10,91 @@ import ProjectList from "../components/ProjectList";
 import Section from "../components/Section";
 import DonationBox from "../components/DonationBox";
 
-export default function Home() {
+export async function getStaticProps(context) {
+  return {
+    props: {
+      subscription: await createSubscription(context, {
+        query: /* GraphQL */ `
+          query {
+            frontpage {
+              heading
+              blocks {
+                ... on DonationBoxRecord {
+                  _modelApiKey
+                  heading
+                  ingress
+                  body
+                }
+                ... on SectionRecord {
+                  _modelApiKey
+                  illustration
+                  heading
+                  subheading
+                  variant
+                  linkText
+                  linkTo
+                  reverse
+                }
+                ... on ProjectListRecord {
+                  _modelApiKey
+                  heading
+                  ingress
+                  projects {
+                    slug
+                    heading
+                    ingress
+                  }
+                }
+              }
+            }
+          }
+        `,
+      }),
+    },
+  };
+}
+
+const blocks = {
+  donation_box: (props, index) => (
+    <Container key={index}>
+      <DonationBox
+        heading={props.heading}
+        ingress={props.ingress}
+        body={props.body}
+      />
+    </Container>
+  ),
+  section: (props, index) => (
+    <Section
+      key={index}
+      label={props.heading}
+      heading={props.subheading}
+      variant={props.variant}
+      illustration={props.illustration}
+      linkText={props.linkText}
+      linkTo={props.linkTo}
+      reverse={props.reverse}
+    />
+  ),
+  project_list: (props, index) => (
+    <ProjectList
+      key={index}
+      heading={props.heading}
+      ingress={props.ingress}
+      items={props.projects}
+    />
+  ),
+};
+
+function renderBlocks({ _modelApiKey, ...props }, index) {
+  return blocks[_modelApiKey](props, index);
+}
+
+export default function Home({ subscription }) {
+  const { data, error, status } = useQuerySubscription(subscription);
+
+  console.log({ data, error, status });
+
   return (
     <div>
       <Head>
@@ -16,72 +102,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Hero
-        variant="circle"
-        heading="Vi jobber for å endre lover og holdninger til bruk av psykedelika og
-          MDMA."
-      />
+      <Hero variant="circle" heading={data.frontpage.heading} />
 
-      <Section
-        variant="light"
-        illustration="circle-grid"
-        label="Vår visjon"
-        heading="Vi aksepterer og anerkjenner at mennesker bruker psykedelika og MDMA til rekreasjonelle, spirituelle eller terapeutiske formål."
-        links={[{ title: "Les mer om oss", href: "/test" }]}
-      />
-
-      <ProjectList
-        label="Våre prosjekter"
-        title="Senectus elementum non placerat et neque purus."
-        body="Praesent eu fringilla proin diam gravida. Sed nibh scelerisque interdum odio fusce mauris. Tortor amet magna interdum pellentesque facilisi sit."
-        items={[
-          {
-            href: "/projects/rusreform",
-            heading: "Rusreform",
-            text:
-              "Vi har bidratt både innspill til Rusreformutvalget og svar til Rusreformutvalgets utredning, og støtter forslaget om avkriminalisering.",
-          },
-          {
-            href: "/projects/tryggtripp",
-            heading: "Tryggtripp.no",
-            text:
-              "Trygg Tripp er en skadereduserende veileder for MDMA og psykedelika, med informasjon om dosering, sikkerhet og effekt.",
-          },
-          {
-            href: "/projects/mikrodosering",
-            heading: "Mikrodosering.no",
-            text:
-              "Vi har bidratt til Rusreformutvalget og Rusreformutvalgets utredning, og støtter forslaget om avkriminalisering.",
-          },
-          {
-            href: "/projects/mikrodosering",
-            heading: "How to change your mind",
-            text:
-              "I 2019 sendte vi ut boken “How to Change Your Mind” og i den forbindelse lagde vi en nettside med ressursser",
-          },
-        ]}
-      />
-
-      <Section
-        illustration="thingy"
-        label="Utforsk din egen bevissthet"
-        heading="Vi jobber for å endre lover og holdninger til bruk av psykedelika og MDMA."
-        body="Å utforske sitt eget sinn og bevissthet er en viktig del av det være menneske. Bruk av psykedelika er for mange en del av en genuin spirituell praksis. For mange fører det til dype personlige opplevelser, med varig positiv effekt."
-        links={[{ title: "Les mer", href: "/test" }]}
-      />
-
-      <Container>
-        <DonationBox />
-      </Container>
-
-      <Section
-        reverse
-        illustration="thingy"
-        links={[{ title: "Hei", href: "/hei" }]}
-        label="Samarbeidspartnere"
-        heading="Psynapse er et nettverk som jobber for å skape anerkjennelseog forståelse for bruk av psykedelika og MDMA."
-        body="Å utforske sitt eget sinn og bevissthet er en viktig del av det være menneske. Bruk av psykedelika er for mange en del av en genuin spirituell praksis. For mange fører det til dype personlige opplevelser, med varig positiv effekt."
-      />
+      {data.frontpage.blocks.map((block, i) => renderBlocks(block, i))}
 
       <Footer />
     </div>

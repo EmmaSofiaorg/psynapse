@@ -8,7 +8,7 @@ import Text from "../../primitives/Text";
 import Link from "../../primitives/Link";
 
 const Illustration = {
-  "circle-grid": <CircleGrid />,
+  circle: <CircleGrid />,
   thingy: <Thingy />,
 };
 
@@ -19,7 +19,8 @@ export default function Section({
   label,
   heading,
   body,
-  links = [],
+  linkText,
+  linkTo,
 }) {
   const classNames = cn({
     section: true,
@@ -47,11 +48,12 @@ export default function Section({
               {body}
             </Text>
           )}
-          {links.map((link, i) => (
-            <Link key={i} href={link.href} prefix="→">
-              {link.title}
+
+          {linkTo && (
+            <Link href={linkTo} prefix="→">
+              {linkText}
             </Link>
-          ))}
+          )}
         </div>
       </div>
     </section>
