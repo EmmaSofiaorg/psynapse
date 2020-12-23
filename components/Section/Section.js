@@ -8,8 +8,8 @@ import Text from "../../primitives/Text";
 import Link from "../../primitives/Link";
 
 const Illustration = {
-  circle: <CircleGrid />,
-  thingy: <Thingy />,
+  "circle-grid": <CircleGrid />,
+  trip: <Thingy />,
 };
 
 export default function Section({

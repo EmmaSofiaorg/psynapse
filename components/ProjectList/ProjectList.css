@@ -1,4 +1,5 @@
 .project-list {
+  margin-bottom: var(--space-xl);
 }
 
 .project-list__description {
@@ -13,18 +14,25 @@
   list-style: none;
 }
 
+.project-list-item:first-of-type {
+  border-top: 2px solid var(--border-color);
+}
+
 .project-list-item {
+  --border-color: var(--color-contrast);
   counter-increment: item;
   width: 100%;
   padding-top: var(--space-xl);
   padding-bottom: var(--space-xl);
   padding-left: var(--page-bleed);
   padding-right: var(--page-bleed);
+  box-shadow: 2px 2px 0px 0px var(--border-color);
 }
 
 .project-list-item:hover {
   background-color: var(--color-vibrant-blue);
   color: var(--color-white);
+  --border-color: var(--color-vibrant-blue);
 }
 
 .project-list-item:hover .project-list-item__counter {
@@ -83,6 +91,6 @@
   content: "→";
 }
 
-.project-list-item:hover .project-list-item__arrow:after {
+.project-list-item--external .project-list-item__arrow:after {
   content: "↗";
 }

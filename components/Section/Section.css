@@ -1,6 +1,6 @@
 .section {
   width: 100%;
-  margin-bottom: var(--space-xxl);
+  margin-bottom: var(--space-xl);
   padding-top: var(--space-xxl);
   padding-bottom: var(--space-xxl);
   padding-left: var(--page-bleed);

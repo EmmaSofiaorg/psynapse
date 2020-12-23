@@ -41,6 +41,8 @@ export async function getStaticProps(context) {
                   ingress
                   projects {
                     slug
+                    url
+                    readMore
                     heading
                     ingress
                   }

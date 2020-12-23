@@ -37,9 +37,9 @@ export default function Header() {
               Home
             </a>
           </Link>
-          <Link href="/">
+          <Link href="/projects">
             <a className="header__menu-page-link" style={{ "--item-order": 2 }}>
-              Rusreform
+              Prosjekter
             </a>
           </Link>
           <Link href="/">

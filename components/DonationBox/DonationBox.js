@@ -22,7 +22,7 @@ export default function DonationBox({ heading = "", ingress = "", body = "" }) {
           style={{ maxWidth: "200px", marginTop: "var(--space-xl)" }}
         />
       </div>
-      <div>Column 2</div>
+      <div></div>
     </div>
   );
 }

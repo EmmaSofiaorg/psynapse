@@ -8,6 +8,7 @@
   background-size: 50vw;
   padding-left: var(--page-bleed);
   padding-right: var(--page-bleed);
+  margin-bottom: var(--space-xl);
 }
 
 .hero__wrapper {
