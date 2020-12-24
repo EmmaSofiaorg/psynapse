@@ -1,10 +1,8 @@
 .section {
   width: 100%;
-  margin-bottom: var(--space-xl);
-  padding-top: var(--space-xxl);
-  padding-bottom: var(--space-xxl);
   padding-left: var(--page-bleed);
   padding-right: var(--page-bleed);
+  margin-bottom: var(--space-xl);
 }
 
 .section__wrapper {
@@ -27,6 +25,8 @@
 }
 
 .section--light {
+  padding-top: var(--space-xxl);
+  padding-bottom: var(--space-xxl);
   background-color: var(--color-dusty-lilac);
 }
 
