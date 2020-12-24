@@ -7,7 +7,7 @@ import Text from "../../primitives/Text";
 import Link from "../../primitives/Link";
 import Html from "../../primitives/Html";
 
-import Hero from "../../components/Hero";
+import Quote from "../../components/Quote";
 
 import Drugs from "../../public/assets/illustrations/drugs.svg";
 
@@ -37,6 +37,11 @@ export async function getServerSideProps(context) {
                   heading
                   body
                 }
+                ... on QuoteRecord {
+                  _modelApiKey
+                  heading
+                  body
+                }
               }
             }
           }
@@ -55,6 +60,7 @@ const blocks = {
       <Html>{props.body}</Html>
     </div>
   ),
+  quote: (props, index) => <Quote {...props} key={index}></Quote>,
 };
 
 function renderBlocks({ _modelApiKey, ...props }, index) {

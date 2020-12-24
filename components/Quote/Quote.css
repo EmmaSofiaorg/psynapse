@@ -1,0 +1,19 @@
+.quote {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: var(--space-lg);
+  width: 100%;
+  padding: var(--space-lg);
+  background: var(--color-dusty-lilac);
+  margin-bottom: var(--space-xl);
+}
+
+.quote__illustration {
+  max-width: 75px;
+}
+
+@media (min-width: 800px) {
+  .quote {
+    grid-template-columns: 1fr 5fr;
+  }
+}
