@@ -1,0 +1,27 @@
+.html h1,
+.html h2,
+.html h3,
+.html h4,
+.html h5,
+.html h6 {
+  font-family: var(--ff-heading);
+}
+
+.html table {
+  border: 0;
+}
+
+.html table th,
+.html table td {
+  border: 0;
+  padding: var(--space-sm) 0px;
+  border-bottom: 1px solid black;
+}
+
+.html table tr:first-of-type td > *,
+.html table tr:first-of-type td {
+  color: var(--color-vibrant-blue);
+  text-transform: uppercase;
+  font-size: var(--fs-label);
+  font-weight: 600;
+}

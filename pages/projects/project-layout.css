@@ -1,0 +1,11 @@
+.project-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xl);
+}
+
+.project-layout__info-box {
+  background-color: var(--color-vibrant-blue);
+  padding: var(--space-md);
+  color: var(--color-white);
+}

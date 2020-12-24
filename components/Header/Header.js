@@ -33,27 +33,47 @@ export default function Header() {
       <div className="header__menu">
         <nav className="header__menu-page-links">
           <Link href="/">
-            <a className="header__menu-page-link" style={{ "--item-order": 1 }}>
+            <a
+              className="header__menu-page-link"
+              onClick={() => setOpen(!open)}
+              style={{ "--item-order": 1 }}
+            >
               Home
             </a>
           </Link>
           <Link href="/projects">
-            <a className="header__menu-page-link" style={{ "--item-order": 2 }}>
+            <a
+              className="header__menu-page-link"
+              onClick={() => setOpen(!open)}
+              style={{ "--item-order": 2 }}
+            >
               Prosjekter
             </a>
           </Link>
           <Link href="/">
-            <a className="header__menu-page-link" style={{ "--item-order": 3 }}>
+            <a
+              className="header__menu-page-link"
+              onClick={() => setOpen(!open)}
+              style={{ "--item-order": 3 }}
+            >
               Psykedelika og MDMA
             </a>
           </Link>
           <Link href="/">
-            <a className="header__menu-page-link" style={{ "--item-order": 4 }}>
+            <a
+              className="header__menu-page-link"
+              onClick={() => setOpen(!open)}
+              style={{ "--item-order": 4 }}
+            >
               Støtt oss
             </a>
           </Link>
           <Link href="/">
-            <a className="header__menu-page-link" style={{ "--item-order": 5 }}>
+            <a
+              className="header__menu-page-link"
+              onClick={() => setOpen(!open)}
+              style={{ "--item-order": 5 }}
+            >
               Om oss
             </a>
           </Link>

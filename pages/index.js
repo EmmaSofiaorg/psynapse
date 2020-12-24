@@ -4,14 +4,14 @@ import { useQuerySubscription } from "react-datocms";
 
 import Container from "../primitives/Container";
 
-import Footer from "../components/Footer";
 import Hero from "../components/Hero";
 import ProjectList from "../components/ProjectList";
 import Section from "../components/Section";
 import DonationBox from "../components/DonationBox";
 
-export async function getServerSideProps(context) {
+export async function getStaticProps(context) {
   return {
+    revalidate: 1,
     props: {
       subscription: await createSubscription(context, {
         query: /* GraphQL */ `
@@ -107,8 +107,6 @@ export default function Home({ subscription }) {
       <Hero variant="circle" heading={data.frontpage.heading} />
 
       {data.frontpage.blocks.map((block, i) => renderBlocks(block, i))}
-
-      <Footer />
     </div>
   );
 }
