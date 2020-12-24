@@ -7,10 +7,15 @@ import Text from "../../primitives/Text";
 import Link from "../../primitives/Link";
 import Html from "../../primitives/Html";
 
-import Footer from "../../components/Footer";
 import Hero from "../../components/Hero";
 
+import Drugs from "../../public/assets/illustrations/drugs.svg";
+
 import "./project-layout.css";
+
+const Illustration = {
+  drugs: <Drugs />,
+};
 
 export async function getServerSideProps(context) {
   return {
@@ -24,6 +29,7 @@ export async function getServerSideProps(context) {
             project(filter: { slug: { eq: $slug } }) {
               heading
               ingress
+              illustration
               url
               blocks {
                 ... on TextRecord {
@@ -67,14 +73,18 @@ export default function Project({ subscription }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Hero variant="circle" heading={data.project.heading} />
-
       <Container>
         <div className="project-layout">
           <div className="project-layout__content">
+            <Text tag="h1" variant="heading-lg">
+              {data.project.heading}
+            </Text>
             {data.project.blocks.map((block, i) => renderBlocks(block, i))}
           </div>
           <div className="project-layout__sidebar">
+            <div className="project-layout__illustration">
+              {Illustration[data.project.illustration]}
+            </div>
             <div className="project-layout__info-box">
               <Text variant="heading-sub">Om prosjektet</Text>
               <Text tag="p" variant="body">

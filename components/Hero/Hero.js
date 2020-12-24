@@ -9,12 +9,11 @@ export default function Hero({
   backgroundImage,
   backgroundSize,
   backgroundPosition,
-  variant,
-  children,
+  illustration,
 }) {
   const classes = cn({
     hero: true,
-    [`hero--${variant}`]: variant,
+    [`hero--${illustration}`]: illustration,
   });
 
   return (

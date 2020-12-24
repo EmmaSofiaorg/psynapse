@@ -30,6 +30,14 @@
   background-image: url("/assets/illustrations/bg.svg");
 }
 
+.hero--drugs {
+  background-repeat: no-repeat;
+  background-position-x: right;
+  background-position-y: calc(100% - var(--space-lg));
+  background-size: clamp(500px, 40vw, 850px);
+  background-image: url("/assets/illustrations/drugs.svg");
+}
+
 @media (min-width: 800px) {
   .hero {
     height: 100vh;

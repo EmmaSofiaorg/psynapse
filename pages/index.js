@@ -104,7 +104,7 @@ export default function Home({ subscription }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Hero variant="circle" heading={data.frontpage.heading} />
+      <Hero illustration="circle" heading={data.frontpage.heading} />
 
       {data.frontpage.blocks.map((block, i) => renderBlocks(block, i))}
     </div>
