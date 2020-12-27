@@ -1,5 +1,5 @@
 .footer {
-  padding-top: var(--page-bleed);
+  padding-top: var(--container-xs);
   padding-left: var(--page-bleed);
   padding-right: var(--page-bleed);
   padding-bottom: var(--page-bleed);

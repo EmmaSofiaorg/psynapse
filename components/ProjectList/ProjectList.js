@@ -10,12 +10,14 @@ import Container from "../../primitives/Container";
 export default function ProjectList({ heading, ingress, body, items = [] }) {
   return (
     <div className="project-list">
-      <Container className="project-list__description">
-        <Text variant="label">{heading}</Text>
-        <Text tag="h2" variant="heading-sm">
-          {ingress}
-        </Text>
-        <Text variant="body">{body}</Text>
+      <Container>
+        <div className="project-list__description">
+          <Text variant="label">{heading}</Text>
+          <Text tag="h2" variant="heading-sm">
+            {ingress}
+          </Text>
+          <Text variant="body">{body}</Text>
+        </div>
       </Container>
       <ol className="project-list__items">
         {items.map((item, i) => {

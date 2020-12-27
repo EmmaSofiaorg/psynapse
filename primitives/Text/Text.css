@@ -70,3 +70,7 @@
 .text--no-margin {
   margin: 0;
 }
+
+.text--bold {
+  font-weight: 600;
+}

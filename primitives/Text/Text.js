@@ -2,11 +2,19 @@ import React from "react";
 import cn from "../../utils/classnames";
 import "./Text.css";
 
-export default function Text({ tag, variant, noMargin, html, children }) {
+export default function Text({
+  tag,
+  weight,
+  variant,
+  noMargin,
+  html,
+  children,
+}) {
   const classNames = cn({
     text: true,
     [`text--${variant}`]: variant,
     "text--no-margin": noMargin,
+    [`text--${weight}`]: weight,
   });
 
   switch (tag) {

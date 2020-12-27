@@ -63,8 +63,8 @@ const blocks = {
   quote: (props, index) => <Quote {...props} key={index}></Quote>,
 };
 
-function renderBlocks({ _modelApiKey, ...props }, index) {
-  return blocks[_modelApiKey](props, index);
+function renderBlock({ _modelApiKey, ...props }, index) {
+  return blocks[_modelApiKey]?.(props, index) || null;
 }
 
 export default function Project({ subscription }) {
@@ -85,7 +85,7 @@ export default function Project({ subscription }) {
             <Text tag="h1" variant="heading-lg">
               {data.project.heading}
             </Text>
-            {data.project.blocks.map((block, i) => renderBlocks(block, i))}
+            {data.project.blocks.map((block, i) => renderBlock(block, i))}
           </div>
           <div className="project-layout__sidebar">
             <div className="project-layout__illustration">

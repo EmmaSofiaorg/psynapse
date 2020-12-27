@@ -3,8 +3,12 @@ import { createSubscription } from "../lib/api";
 import { useQuerySubscription } from "react-datocms";
 
 import Container from "../primitives/Container";
+import Text from "../primitives/Text";
+import Link from "../primitives/Link";
+import Html from "../primitives/Html";
 
 import Hero from "../components/Hero";
+import PersonCard from "../components/PersonCard";
 import ProjectList from "../components/ProjectList";
 import Section from "../components/Section";
 import DonationBox from "../components/DonationBox";
@@ -19,6 +23,20 @@ export async function getStaticProps(context) {
             frontpage {
               heading
               blocks {
+                ... on PersonListRecord {
+                  _modelApiKey
+                  heading
+                  ingress
+                  people {
+                    name
+                    job
+                    phoneNumber
+                    email
+                    image {
+                      url
+                    }
+                  }
+                }
                 ... on DonationBoxRecord {
                   _modelApiKey
                   heading
@@ -86,10 +104,42 @@ const blocks = {
       items={props.projects}
     />
   ),
+  person_list: (props, index) => (
+    <Container key={index}>
+      <div
+        style={{
+          display: "grid",
+          gap: "var(--space-xl)",
+          gridTemplateColumns: "1fr 1fr",
+        }}
+      >
+        <div>
+          <Text tag="h2" variant="label">
+            {props.heading}
+          </Text>
+          <Text tag="p" variant="heading-sm">
+            {props.ingress}
+          </Text>
+          <Html>{props.body}</Html>
+        </div>
+        <div
+          style={{
+            display: "grid",
+            gap: "var(--space-xl)",
+            gridTemplateColumns: "1fr 1fr",
+          }}
+        >
+          {props.people.map((person, i) => (
+            <PersonCard {...person} />
+          ))}
+        </div>
+      </div>
+    </Container>
+  ),
 };
 
-function renderBlocks({ _modelApiKey, ...props }, index) {
-  return blocks[_modelApiKey](props, index);
+function renderBlock({ _modelApiKey, ...props }, index) {
+  return blocks[_modelApiKey]?.(props, index) || null;
 }
 
 export default function Home({ subscription }) {
@@ -106,7 +156,7 @@ export default function Home({ subscription }) {
 
       <Hero illustration="circle" heading={data.frontpage.heading} />
 
-      {data.frontpage.blocks.map((block, i) => renderBlocks(block, i))}
+      {data.frontpage.blocks.map((block, i) => renderBlock(block, i))}
     </div>
   );
 }

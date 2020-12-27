@@ -42,7 +42,7 @@ export default function Projects({ subscription }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Hero variant="circle" heading="Prosjekter" />
+      <Hero illustration="circle" heading="Prosjekter" />
 
       <ProjectList items={data.allProjects} />
     </div>
