@@ -4,8 +4,8 @@
   --space-md: clamp(12px, 5vw, 24px);
   --space-lg: clamp(24px, 10vw, 48px);
   --space-xl: clamp(48px, 15vw, 97px);
-
   --space-xxl: clamp(97px, 20vw, 164px);
+
   --page-bleed: clamp(16px, 5.9vw, 75px);
 
   --header-height: clamp(120px, 19.1vw, 200px);
@@ -29,6 +29,7 @@
   --fs-link: clamp(16px, 1.1vw, 20px);
   --fs-label: clamp(13px, 0.9vw, 16px);
   --fs-footnote: clamp(13px, 1vw, 18px);
+  --line-height: 1.5;
 
   /* COLORS */
   --color-vibrant-blue: #5f5aff;

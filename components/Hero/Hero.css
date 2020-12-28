@@ -1,11 +1,12 @@
 .hero {
-  height: 75vh;
+  min-height: 75vh;
   max-height: 1200px;
   display: flex;
   align-items: flex-end;
   background-repeat: no-repeat;
   background-position: right;
   background-size: 50vw;
+  padding-top: var(--header-height);
   padding-left: var(--page-bleed);
   padding-right: var(--page-bleed);
   margin-bottom: var(--space-xl);
@@ -38,8 +39,15 @@
   background-image: url("/assets/illustrations/drugs.svg");
 }
 
+.hero--sm {
+  min-height: 50vh;
+}
+
 @media (min-width: 800px) {
   .hero {
-    height: 100vh;
+    min-height: 100vh;
+  }
+  .hero--sm {
+    min-height: 60vh;
   }
 }

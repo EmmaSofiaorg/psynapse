@@ -61,8 +61,8 @@ export async function getStaticProps(context) {
                     slug
                     url
                     readMore
-                    heading
-                    ingress
+                    headingShort
+                    description
                   }
                 }
               }

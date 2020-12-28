@@ -29,6 +29,7 @@ export async function getServerSideProps(context) {
             project(filter: { slug: { eq: $slug } }) {
               heading
               ingress
+              description
               illustration
               url
               blocks {
@@ -85,6 +86,9 @@ export default function Project({ subscription }) {
             <Text tag="h1" variant="heading-lg">
               {data.project.heading}
             </Text>
+            <Text tag="p" variant="ingress">
+              {data.project.ingress}
+            </Text>
             {data.project.blocks.map((block, i) => renderBlock(block, i))}
           </div>
           <div className="project-layout__sidebar">
@@ -94,7 +98,7 @@ export default function Project({ subscription }) {
             <div className="project-layout__info-box">
               <Text variant="heading-sub">Om prosjektet</Text>
               <Text tag="p" variant="body">
-                {data.project.ingress}
+                {data.project.description}
               </Text>
               <Link>Les mer</Link>
             </div>

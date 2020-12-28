@@ -13,8 +13,8 @@ export async function getStaticProps(context) {
         query: /* GraphQL */ `
           query AllProjects {
             allProjects {
-              heading
-              ingress
+              headingShort
+              description
               url
               readMore
               slug
@@ -24,10 +24,6 @@ export async function getStaticProps(context) {
       }),
     },
   };
-}
-
-function renderBlocks({ _modelApiKey, ...props }, index) {
-  return blocks[_modelApiKey](props, index);
 }
 
 export default function Projects({ subscription }) {
@@ -42,7 +38,12 @@ export default function Projects({ subscription }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Hero illustration="circle" heading="Prosjekter" />
+      <Hero
+        size="sm"
+        illustration="circle"
+        heading="Prosjekter"
+        ingress="Bla bla bla bla"
+      />
 
       <ProjectList items={data.allProjects} />
     </div>
