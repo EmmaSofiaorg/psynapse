@@ -1,14 +1,16 @@
-.html h1,
-.html h2,
-.html h3,
-.html h4,
-.html h5,
-.html h6 {
-  font-family: var(--ff-heading);
+.html {
+  margin-bottom: var(--space-xl);
+}
+
+@media (min-width: 800px) {
+  .html--columns-2 {
+    column-count: 2;
+    gap: var(--space-xl);
+  }
 }
 
 .html table {
-  margin-top: var(--space-lg);
+  margin-bottom: var(--space-lg);
   border: 0;
 }
 

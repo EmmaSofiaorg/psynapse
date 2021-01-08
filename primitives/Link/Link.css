@@ -1,18 +1,19 @@
 .link {
   color: currentColor;
-  display: flex;
+  display: inline-flex;
   align-items: center;
+  --postfix-color: var(--color-vibrant-blue);
 }
 
 .link__prefix {
   font-weight: 500;
-  color: var(--color-vibrant-blue);
+  color: var(--postfix-color);
   padding-right: var(--space-md);
 }
 
 .link__postfix {
   font-weight: 500;
-  color: var(--color-vibrant-blue);
+  color: var(--postfix-color);
   padding-left: var(--space-md);
 }
 

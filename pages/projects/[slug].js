@@ -35,6 +35,7 @@ export async function getServerSideProps(context) {
                   _modelApiKey
                   heading
                   body
+                  columns
                 }
                 ... on QuoteRecord {
                   _modelApiKey
@@ -71,7 +72,7 @@ export default function Project({ subscription }) {
             <Text tag="p" variant="ingress">
               {data.project.ingress}
             </Text>
-            <Blocks blocks={data.project.blocks} />
+            <Blocks full blocks={data.project.blocks} />
           </div>
           <div className="project-layout__sidebar">
             <div className="project-layout__illustration">

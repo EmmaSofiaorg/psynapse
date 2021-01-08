@@ -68,7 +68,7 @@ export default function Header() {
               Støtt oss
             </a>
           </Link>
-          <Link href="/">
+          <Link href="/about">
             <a
               className="header__menu-page-link"
               onClick={() => setOpen(!open)}

@@ -10,17 +10,52 @@ import DonationBox from "../../components/DonationBox";
 import Quote from "../../components/Quote";
 
 const blocks = {
-  text: (props, index) => (
-    <div style={{ marginBottom: "var(--space-xl)" }}>
+  two_column_grid: (props, index, full) => (
+    <Container full>
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "1fr 1fr",
+          marginBottom: "var(--space-xl)",
+        }}
+      >
+        <div
+          style={{
+            backgroundColor: "var(--color-vibrant-blue)",
+            padding: "var(--space-xl)",
+            color: "var(--color-white)",
+          }}
+        >
+          <Html style={{ "--color-vibrant-blue": "white" }}>
+            {props.columnOne}
+          </Html>
+        </div>
+        <div
+          style={{
+            backgroundColor: "var(--color-dusty-lilac)",
+            padding: "var(--space-xl)",
+          }}
+        >
+          <Html>{props.columnTwo}</Html>
+        </div>
+      </div>
+    </Container>
+  ),
+  text: (props, index, full) => (
+    <Container
+      key={index}
+      full={full}
+      style={{ marginBottom: "var(--space-xl)" }}
+    >
       <Text html tag="h2" variant="heading-md">
         {props.heading}
       </Text>
-      <Html>{props.body}</Html>
-    </div>
+      <Html columns={props.columns}>{props.body}</Html>
+    </Container>
   ),
   quote: (props, index) => <Quote {...props} key={index}></Quote>,
-  donation_box: (props, index) => (
-    <Container key={index}>
+  donation_box: (props, index, full) => (
+    <Container full={full} key={index}>
       <DonationBox
         heading={props.heading}
         ingress={props.ingress}
@@ -36,12 +71,10 @@ const blocks = {
       variant={props.variant}
       body={props.body}
       illustration={props.illustration}
-      linkText={props.linkText}
-      linkTo={props.linkTo}
       reverse={props.reverse}
     />
   ),
-  project_list: (props, index) => (
+  project_list: (props, index, full) => (
     <ProjectList
       key={index}
       heading={props.heading}
@@ -49,8 +82,8 @@ const blocks = {
       items={props.projects}
     />
   ),
-  person_list: (props, index) => (
-    <Container key={index}>
+  person_list: (props, index, full) => (
+    <Container full={full} key={index}>
       <div
         style={{
           display: "grid",
@@ -83,10 +116,10 @@ const blocks = {
   ),
 };
 
-function renderBlock({ _modelApiKey, ...props }, index) {
-  return blocks[_modelApiKey]?.(props, index) || null;
+function renderBlock({ _modelApiKey, ...props }, index, full) {
+  return blocks[_modelApiKey]?.(props, index, full) || null;
 }
 
-export default function Blocks({ blocks }) {
-  return <>{blocks.map((block, i) => renderBlock(block, i))}</>;
+export default function Blocks({ blocks, full }) {
+  return <>{blocks.map((block, i) => renderBlock(block, i, full))}</>;
 }

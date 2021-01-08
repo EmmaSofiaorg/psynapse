@@ -12,9 +12,14 @@ export async function getStaticProps(context) {
       subscription: await createSubscription(context, {
         query: /* GraphQL */ `
           query {
-            frontpage {
+            aboutpage {
               heading
               blocks {
+                ... on TwoColumnGridRecord {
+                  _modelApiKey
+                  columnOne
+                  columnTwo
+                }
                 ... on PersonListRecord {
                   _modelApiKey
                   heading
@@ -28,6 +33,17 @@ export async function getStaticProps(context) {
                       url
                     }
                   }
+                }
+                ... on TextRecord {
+                  _modelApiKey
+                  heading
+                  body
+                  columns
+                }
+                ... on QuoteRecord {
+                  _modelApiKey
+                  heading
+                  body
                 }
                 ... on DonationBoxRecord {
                   _modelApiKey
@@ -44,18 +60,6 @@ export async function getStaticProps(context) {
                   variant
                   reverse
                 }
-                ... on ProjectListRecord {
-                  _modelApiKey
-                  heading
-                  ingress
-                  projects {
-                    slug
-                    url
-                    readMore
-                    headingShort
-                    description
-                  }
-                }
               }
             }
           }
@@ -65,10 +69,8 @@ export async function getStaticProps(context) {
   };
 }
 
-export default function Home({ subscription }) {
+export default function About({ subscription }) {
   const { data, error, status } = useQuerySubscription(subscription);
-
-  console.log({ data, error, status });
 
   return (
     <div>
@@ -77,9 +79,15 @@ export default function Home({ subscription }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Hero illustration="circle" heading={data.frontpage.heading} />
+      <div className="halla">
+        <Hero
+          size="sm"
+          illustration="circle"
+          heading={data.aboutpage.heading}
+        />
 
-      <Blocks blocks={data.frontpage.blocks} />
+        <Blocks blocks={data.aboutpage.blocks} />
+      </div>
     </div>
   );
 }

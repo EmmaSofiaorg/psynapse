@@ -43,7 +43,6 @@ export default function ProjectList({ heading, ingress, body, items = [] }) {
                   <h2 className="project-list-item__title">
                     {item.headingShort}
                   </h2>
-                  <p className="project-list-item__text">{item.description}</p>
                   <div className="project-list-item__arrow"></div>
                 </a>
               </Link>

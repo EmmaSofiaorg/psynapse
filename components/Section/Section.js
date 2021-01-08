@@ -47,12 +47,6 @@ export default function Section({
             {heading}
           </Text>
           {body && <Html>{body}</Html>}
-
-          {linkTo && (
-            <Link href={linkTo} prefix="→">
-              {linkText}
-            </Link>
-          )}
         </div>
       </div>
     </section>

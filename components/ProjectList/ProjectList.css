@@ -65,7 +65,7 @@
 
 @media (min-width: 1000px) {
   .project-list-item__wrapper {
-    grid-template-columns: 1fr 5fr 4fr 2fr;
+    grid-template-columns: 1fr 5fr 2fr;
   }
 }
 
