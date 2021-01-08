@@ -2,16 +2,8 @@ import Head from "next/head";
 import { createSubscription } from "../lib/api";
 import { useQuerySubscription } from "react-datocms";
 
-import Container from "../primitives/Container";
-import Text from "../primitives/Text";
-import Link from "../primitives/Link";
-import Html from "../primitives/Html";
-
 import Hero from "../components/Hero";
-import PersonCard from "../components/PersonCard";
-import ProjectList from "../components/ProjectList";
-import Section from "../components/Section";
-import DonationBox from "../components/DonationBox";
+import Blocks from "../components/Blocks";
 
 export async function getStaticProps(context) {
   return {
@@ -48,6 +40,7 @@ export async function getStaticProps(context) {
                   illustration
                   heading
                   subheading
+                  body
                   variant
                   linkText
                   linkTo
@@ -74,74 +67,6 @@ export async function getStaticProps(context) {
   };
 }
 
-const blocks = {
-  donation_box: (props, index) => (
-    <Container key={index}>
-      <DonationBox
-        heading={props.heading}
-        ingress={props.ingress}
-        body={props.body}
-      />
-    </Container>
-  ),
-  section: (props, index) => (
-    <Section
-      key={index}
-      label={props.heading}
-      heading={props.subheading}
-      variant={props.variant}
-      illustration={props.illustration}
-      linkText={props.linkText}
-      linkTo={props.linkTo}
-      reverse={props.reverse}
-    />
-  ),
-  project_list: (props, index) => (
-    <ProjectList
-      key={index}
-      heading={props.heading}
-      ingress={props.ingress}
-      items={props.projects}
-    />
-  ),
-  person_list: (props, index) => (
-    <Container key={index}>
-      <div
-        style={{
-          display: "grid",
-          gap: "var(--space-xl)",
-          gridTemplateColumns: "1fr 1fr",
-        }}
-      >
-        <div>
-          <Text tag="h2" variant="label">
-            {props.heading}
-          </Text>
-          <Text tag="p" variant="heading-sm">
-            {props.ingress}
-          </Text>
-          <Html>{props.body}</Html>
-        </div>
-        <div
-          style={{
-            display: "grid",
-            gap: "var(--space-xl)",
-            gridTemplateColumns: "1fr 1fr",
-          }}
-        >
-          {props.people.map((person, i) => (
-            <PersonCard {...person} />
-          ))}
-        </div>
-      </div>
-    </Container>
-  ),
-};
-
-function renderBlock({ _modelApiKey, ...props }, index) {
-  return blocks[_modelApiKey]?.(props, index) || null;
-}
-
 export default function Home({ subscription }) {
   const { data, error, status } = useQuerySubscription(subscription);
 
@@ -156,7 +81,7 @@ export default function Home({ subscription }) {
 
       <Hero illustration="circle" heading={data.frontpage.heading} />
 
-      {data.frontpage.blocks.map((block, i) => renderBlock(block, i))}
+      <Blocks blocks={data.frontpage.blocks} />
     </div>
   );
 }

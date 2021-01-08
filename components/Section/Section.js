@@ -3,13 +3,16 @@ import cn from "../../utils/classnames";
 import "./Section.css";
 import CircleGrid from "../../public/assets/illustrations/circle-grid.svg";
 import Thingy from "../../public/assets/illustrations/thingy.svg";
+import LSD from "../../public/assets/illustrations/lsd.svg";
 
 import Text from "../../primitives/Text";
 import Link from "../../primitives/Link";
+import Html from "../../primitives/Html";
 
 const Illustration = {
   "circle-grid": <CircleGrid />,
   trip: <Thingy />,
+  lsd: <LSD />,
 };
 
 export default function Section({
@@ -37,17 +40,13 @@ export default function Section({
           </div>
         </div>
         <div className="section__text">
-          <Text tag="div" variant="label">
+          <Text tag="h2" variant="label">
             {label}
           </Text>
-          <Text tag="h2" variant="heading-sm">
+          <Text tag="p" variant="heading-sm">
             {heading}
           </Text>
-          {body && (
-            <Text tag="p" variant="body">
-              {body}
-            </Text>
-          )}
+          {body && <Html>{body}</Html>}
 
           {linkTo && (
             <Link href={linkTo} prefix="→">

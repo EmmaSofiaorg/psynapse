@@ -5,9 +5,7 @@ import { useQuerySubscription } from "react-datocms";
 import Container from "../../primitives/Container";
 import Text from "../../primitives/Text";
 import Link from "../../primitives/Link";
-import Html from "../../primitives/Html";
-
-import Quote from "../../components/Quote";
+import Blocks from "../../components/Blocks";
 
 import Drugs from "../../public/assets/illustrations/drugs.svg";
 
@@ -52,22 +50,6 @@ export async function getServerSideProps(context) {
   };
 }
 
-const blocks = {
-  text: (props, index) => (
-    <div style={{ marginBottom: "var(--space-xl)" }}>
-      <Text html tag="h2" variant="heading-md">
-        {props.heading}
-      </Text>
-      <Html>{props.body}</Html>
-    </div>
-  ),
-  quote: (props, index) => <Quote {...props} key={index}></Quote>,
-};
-
-function renderBlock({ _modelApiKey, ...props }, index) {
-  return blocks[_modelApiKey]?.(props, index) || null;
-}
-
 export default function Project({ subscription }) {
   const { data, error, status } = useQuerySubscription(subscription);
 
@@ -89,7 +71,7 @@ export default function Project({ subscription }) {
             <Text tag="p" variant="ingress">
               {data.project.ingress}
             </Text>
-            {data.project.blocks.map((block, i) => renderBlock(block, i))}
+            <Blocks blocks={data.project.blocks} />
           </div>
           <div className="project-layout__sidebar">
             <div className="project-layout__illustration">

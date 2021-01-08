@@ -12,7 +12,8 @@
     "next": "10.0.3",
     "react": "^16.13.0",
     "react-datocms": "^1.4.5",
-    "react-dom": "^16.13.0"
+    "react-dom": "^16.13.0",
+    "react-html-parser": "^2.0.2"
   },
   "devDependencies": {
     "@svgr/webpack": "^5.5.0",
