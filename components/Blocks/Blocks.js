@@ -2,6 +2,7 @@ import React from "react";
 import Container from "../../primitives/Container";
 import Text from "../../primitives/Text";
 import Html from "../../primitives/Html";
+import { Grid, GridItem } from "../../primitives/Grid";
 
 import PersonCard from "../../components/PersonCard";
 import ProjectList from "../../components/ProjectList";
@@ -11,15 +12,9 @@ import Quote from "../../components/Quote";
 
 const blocks = {
   two_column_grid: (props, index, full) => (
-    <Container full>
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "1fr 1fr",
-          marginBottom: "var(--space-xl)",
-        }}
-      >
-        <div
+    <Container key={index} full style={{ marginBottom: "var(--space-xl)" }}>
+      <Grid columns="2" gap="none">
+        <GridItem
           style={{
             backgroundColor: "var(--color-vibrant-blue)",
             padding: "var(--space-xl)",
@@ -29,16 +24,16 @@ const blocks = {
           <Html style={{ "--color-vibrant-blue": "white" }}>
             {props.columnOne}
           </Html>
-        </div>
-        <div
+        </GridItem>
+        <GridItem
           style={{
             backgroundColor: "var(--color-dusty-lilac)",
             padding: "var(--space-xl)",
           }}
         >
           <Html>{props.columnTwo}</Html>
-        </div>
-      </div>
+        </GridItem>
+      </Grid>
     </Container>
   ),
   text: (props, index, full) => (
@@ -84,34 +79,28 @@ const blocks = {
   ),
   person_list: (props, index, full) => (
     <Container full={full} key={index}>
-      <div
-        style={{
-          display: "grid",
-          gap: "var(--space-xl)",
-          gridTemplateColumns: "repeat(auto-fill, minmax(500px, 1fr));",
-        }}
-      >
-        <div>
-          <Text tag="h2" variant="label">
-            {props.heading}
-          </Text>
-          <Text tag="p" variant="heading-sm">
-            {props.ingress}
-          </Text>
-          <Html>{props.body}</Html>
-        </div>
-        <div
-          style={{
-            display: "grid",
-            gap: "var(--space-xl)",
-            gridTemplateColumns: "1fr 1fr",
-          }}
-        >
-          {props.people.map((person, i) => (
-            <PersonCard {...person} />
-          ))}
-        </div>
-      </div>
+      <Grid columns="2" gap="xl">
+        <GridItem>
+          <div>
+            <Text tag="h2" variant="label">
+              {props.heading}
+            </Text>
+            <Text tag="p" variant="heading-sm">
+              {props.ingress}
+            </Text>
+            <Html>{props.body}</Html>
+          </div>
+        </GridItem>
+        <GridItem>
+          <Grid columnsMobile="2" columns="2" gap="lg">
+            {props.people.map((person, i) => (
+              <GridItem key={i}>
+                <PersonCard {...person} />
+              </GridItem>
+            ))}
+          </Grid>
+        </GridItem>
+      </Grid>
     </Container>
   ),
 };

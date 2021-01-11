@@ -9,11 +9,13 @@ export default function Text({
   noMargin,
   html,
   children,
+  bold,
 }) {
   const classNames = cn({
     text: true,
     [`text--${variant}`]: variant,
     "text--no-margin": noMargin,
+    "text--bold": bold,
     [`text--${weight}`]: weight,
   });
 

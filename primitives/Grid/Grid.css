@@ -1,0 +1,52 @@
+.grid {
+  --columns: 1;
+  --gap: var(--space-md);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(var(--columns), 1fr);
+  gap: var(--gap);
+}
+
+.grid--columns-mobile-2 {
+  --columns: 2;
+}
+.grid--columns-mobile-3 {
+  --columns: 3;
+}
+.grid--columns-mobile-4 {
+  --columns: 4;
+}
+
+@media (min-width: 1000px) {
+  .grid--columns-2 {
+    --columns: 2;
+  }
+  .grid--columns-3 {
+    --columns: 3;
+  }
+  .grid--columns-4 {
+    --columns: 4;
+  }
+}
+
+.grid--gap-none {
+  --gap: none;
+}
+
+.grid--gap-sm {
+  --gap: var(--space-sm);
+}
+
+.grid--gap-md {
+  --gap: var(--space-md);
+}
+
+.grid--gap-lg {
+  --gap: var(--space-lg);
+}
+
+.grid--gap-xl {
+  --gap: var(--space-xl);
+}

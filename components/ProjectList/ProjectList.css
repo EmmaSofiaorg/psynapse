@@ -58,7 +58,7 @@
   max-width: var(--container-xl);
   cursor: pointer;
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 50px 3fr 1fr;
   grid-gap: var(--space-lg);
   align-items: center;
 }

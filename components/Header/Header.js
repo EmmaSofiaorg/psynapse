@@ -54,15 +54,6 @@ export default function Header() {
             <a
               className="header__menu-page-link"
               onClick={() => setOpen(!open)}
-              style={{ "--item-order": 3 }}
-            >
-              Psykedelika og MDMA
-            </a>
-          </Link>
-          <Link href="/">
-            <a
-              className="header__menu-page-link"
-              onClick={() => setOpen(!open)}
               style={{ "--item-order": 4 }}
             >
               Støtt oss
