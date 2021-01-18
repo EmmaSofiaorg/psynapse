@@ -22,8 +22,8 @@
   --border-color: var(--color-contrast);
   counter-increment: item;
   width: 100%;
-  padding-top: var(--space-xl);
-  padding-bottom: var(--space-xl);
+  padding-top: var(--space-lg);
+  padding-bottom: var(--space-lg);
   padding-left: var(--page-bleed);
   padding-right: var(--page-bleed);
   box-shadow: 2px 2px 0px 0px var(--border-color);
@@ -59,7 +59,7 @@
   cursor: pointer;
   display: grid;
   grid-template-columns: 50px 3fr 1fr;
-  grid-gap: var(--space-lg);
+  grid-gap: var(--space-md);
   align-items: center;
 }
 
@@ -72,8 +72,8 @@
 .project-list-item__title {
   margin: 0;
   font-family: var(--ff-heading);
-  font-size: var(--fs-heading-md);
-  font-weight: 400;
+  font-size: var(--fs-heading-lg);
+  font-weight: 500;
 }
 
 .project-list-item__text {

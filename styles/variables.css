@@ -2,7 +2,7 @@
   /* SPACE */
   --space-sm: clamp(8px, 3vw, 12px);
   --space-md: clamp(12px, 5vw, 24px);
-  --space-lg: clamp(24px, 10vw, 48px);
+  --space-lg: clamp(24px, 10vw, 56px);
   --space-xl: clamp(48px, 15vw, 97px);
   --space-xxl: clamp(97px, 20vw, 164px);
 
