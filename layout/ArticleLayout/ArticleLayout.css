@@ -1,0 +1,11 @@
+.article-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-xl);
+}
+
+@media (min-width: 1000px) {
+  .article-layout {
+    grid-template-columns: 1fr 1fr;
+  }
+}

@@ -54,8 +54,6 @@ export async function getServerSideProps(context) {
 export default function Project({ subscription }) {
   const { data, error, status } = useQuerySubscription(subscription);
 
-  console.log({ data, error, status });
-
   return (
     <div>
       <Head>
