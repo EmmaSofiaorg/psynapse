@@ -2,7 +2,6 @@
   display: flex;
   margin-bottom: var(--space-md);
   flex-wrap: wrap;
-  border: 1px solid var(--color-contrast);
 }
 
 .button-group__item {
@@ -13,22 +12,18 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border-left: 1px solid var(--color-contrast);
-  border-top: 1px solid var(--color-contrast);
-  border-bottom: 1px solid var(--color-contrast);
+  border-left: 2px solid var(--color-contrast);
+  border-top: 2px solid var(--color-contrast);
+  border-bottom: 2px solid var(--color-contrast);
 }
 
 .button-group__item:last-of-type {
-  border-right: 1px solid var(--color-contrast);
+  border-right: 2px solid var(--color-contrast);
 }
 
-.button-group__item:hover {
-  background: var(--color-contrast);
-  color: var(--color-white);
-}
-
+.button-group__item:hover,
 .button-group__item--selected {
-  background: var(--color-contrast);
+  background: var(--color-vibrant-blue);
   color: var(--color-white);
 }
 
