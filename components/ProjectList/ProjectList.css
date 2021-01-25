@@ -58,7 +58,7 @@
   max-width: var(--container-xl);
   cursor: pointer;
   display: grid;
-  grid-template-columns: 50px 3fr 1fr;
+  grid-template-columns: 1fr;
   grid-gap: var(--space-md);
   align-items: center;
 }
@@ -74,6 +74,8 @@
   font-family: var(--ff-heading);
   font-size: var(--fs-heading-lg);
   font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .project-list-item__text {

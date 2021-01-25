@@ -65,7 +65,7 @@
 
 .header__menu-page-link {
   font-family: var(--ff-heading);
-  font-size: var(--fs-heading-md);
+  font-size: var(--fs-heading-lg);
   color: var(--color-white);
   display: block;
   cursor: pointer;
