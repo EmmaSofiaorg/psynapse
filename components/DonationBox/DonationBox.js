@@ -67,18 +67,17 @@ export default function DonationBox({ heading = "", ingress = "", body = "" }) {
             { label: "100kr", value: 100 },
             { label: "250kr", value: 250 },
             { label: "500kr", value: 500 },
-            { label: "Valgfritt beløp", value: "custom" },
           ]}
         />
-        {donationValue === "custom" && (
-          <Input
-            onChange={(e) => setDonationValue(e.target.value)}
-            type="number"
-            placeholder="Skriv inn et valgfritt beløp"
-            postfix="kr"
-            full
-          />
-        )}
+
+        <Input
+          onChange={(e) => setDonationValue(Number(e.target.value))}
+          type="tel"
+          placeholder="Eller skriv inn et valgfritt beløp"
+          postfix="kr"
+          full
+        />
+
         <Button onClick={() => donate()}>
           {loading ? "Vennligst vent" : "Gi med vipps"}
         </Button>

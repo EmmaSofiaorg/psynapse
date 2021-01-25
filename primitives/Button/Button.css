@@ -1,9 +1,14 @@
 .button {
   background: transparent;
   outline: 0;
+  font-family: var(--ff-heading);
+  font-feature-settings: "salt" on, "ss01" on, "ss02" on, "ss03" on, "ordn" on,
+    "ss04" on, "ss05" on, "cpsp" on, "zero" on, "cv05" on, "cv06" on;
+  font-size: var(--fs-heading-sub);
   cursor: pointer;
   width: 100%;
-  height: var(--space-lg);
+  padding: 0 var(--space-sm);
+  min-height: var(--element-lg);
   display: flex;
   align-items: center;
   justify-content: center;

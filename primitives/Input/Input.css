@@ -11,6 +11,8 @@
 }
 
 .input__field {
+  padding: 0 var(--space-sm);
+  min-height: var(--element-lg);
   background: transparent;
   border: 2px solid var(--color-contrast);
   height: var(--space-lg);
@@ -43,6 +45,17 @@
   height: inherit;
   padding: 0 var(--space-sm);
   background: none;
+  font-size: 16px;
   border: 0;
   font-size: 16px;
+}
+
+@media (min-width: 800px) {
+  .input {
+    font-size: var(--fs-heading-sub);
+  }
+
+  .input input {
+    font-size: inherit;
+  }
 }

@@ -8,7 +8,11 @@
   cursor: pointer;
   flex: 1 0 auto;
   padding: 0 var(--space-sm);
-  height: var(--space-lg);
+  min-height: var(--element-lg);
+  font-family: var(--ff-heading);
+  font-size: var(--fs-heading-sub);
+  font-feature-settings: "salt" on, "ss01" on, "ss02" on, "ss03" on, "ordn" on,
+    "ss04" on, "ss05" on, "cpsp" on, "zero" on, "cv05" on, "cv06" on;
   display: flex;
   align-items: center;
   justify-content: center;
