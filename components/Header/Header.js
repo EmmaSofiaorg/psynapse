@@ -77,7 +77,24 @@ export default function Header() {
           </Text>
           <hr />
           <div className="header__subscribe-wrapper">
-            <div></div>
+            <div className="header__circle-animation">
+              {[...new Array(3)].map((test, index) => (
+                <svg
+                  key={index}
+                  width="90"
+                  height="91"
+                  viewBox="0 0 90 91"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M66.9933 6.98997L45.1057 1.03637L23.218 6.98997L7.18845 23.2624L1.31878 45.5L7.18846 67.7377L23.2181 84.0101L45.1057 89.9637L66.9933 84.0101L83.0229 67.7377L88.8926 45.5L83.0229 23.2624L66.9933 6.98997Z"
+                    stroke="var(--color-white)"
+                    stroke-width="2"
+                  />
+                </svg>
+              ))}
+            </div>
             <div>
               <Text tag="p" variant="body">
                 En holdningsendring er nødvendig for å skape et åpent og bevisst

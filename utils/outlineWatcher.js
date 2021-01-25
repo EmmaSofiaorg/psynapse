@@ -9,11 +9,15 @@ export default function outlineWatcher() {
     previousAction = "mousedown";
   });
 
-  document.addEventListener("keydown", () => {
+  document.addEventListener("keydown", (e) => {
     if (previousAction === "keydown") {
       return;
     }
-    document.body.classList.add("tabbed");
+    const keyCode = e.key;
+    if (keyCode === 9) {
+      document.body.classList.add("tabbed");
+    }
+
     previousAction = "keydown";
   });
 }
