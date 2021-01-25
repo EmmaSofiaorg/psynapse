@@ -2,6 +2,7 @@
   width: 100%;
   min-width: 100px;
   max-width: 250px;
+  margin-bottom: var(--space-md);
 }
 
 .input__label {
@@ -11,15 +12,11 @@
 
 .input__field {
   background: transparent;
-  border: 1px solid var(--color-contrast);
+  border: 2px solid var(--color-contrast);
   height: var(--space-lg);
   width: 100%;
   display: flex;
   align-items: center;
-}
-
-.input__field:focus-within {
-  outline: 1px solid var(--color-contrast);
 }
 
 .input__postfix {

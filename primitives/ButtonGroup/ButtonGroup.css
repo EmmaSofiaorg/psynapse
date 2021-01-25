@@ -10,13 +10,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border-right: 1px solid var(--color-contrast);
-  border-top: 1px solid var(--color-contrast);
-  border-bottom: 1px solid var(--color-contrast);
+  border-right: 2px solid var(--color-contrast);
+  border-top: 2px solid var(--color-contrast);
+  border-bottom: 2px solid var(--color-contrast);
 }
 
 .button-group__item:first-of-type {
-  border-left: 1px solid var(--color-contrast);
+  border-left: 2px solid var(--color-contrast);
 }
 
 .button-group__item:hover {
