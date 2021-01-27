@@ -19,7 +19,7 @@ export default function ButtonGroup({
           })}
         >
           <input
-            checked={value}
+            checked={value === option.value}
             name={name}
             onChange={() => onChange(option.value)}
             value={option.value}

@@ -6,7 +6,7 @@
 
 .button-group__item {
   cursor: pointer;
-  flex: 1 0 auto;
+  flex: 100%;
   padding: 0 var(--space-sm);
   min-height: var(--element-lg);
   font-family: var(--ff-heading);
@@ -18,11 +18,22 @@
   justify-content: center;
   border-left: 2px solid var(--color-contrast);
   border-top: 2px solid var(--color-contrast);
-  border-bottom: 2px solid var(--color-contrast);
+  border-right: 2px solid var(--color-contrast);
+}
+
+@media (min-width: 800px) {
+  .button-group__item {
+    flex: 1 0 auto;
+    border-right: none;
+    border-bottom: 2px solid var(--color-contrast);
+  }
+  .button-group__item:last-of-type {
+    border-right: 2px solid var(--color-contrast);
+  }
 }
 
 .button-group__item:last-of-type {
-  border-right: 2px solid var(--color-contrast);
+  border-bottom: 2px solid var(--color-contrast);
 }
 
 .button-group__item:hover,

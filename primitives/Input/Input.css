@@ -3,6 +3,9 @@
   min-width: 100px;
   max-width: 250px;
   margin-bottom: var(--space-md);
+  font-family: var(--ff-heading);
+  font-feature-settings: "salt" on, "ss01" on, "ss02" on, "ss03" on, "ordn" on,
+    "ss04" on, "ss05" on, "cpsp" on, "zero" on, "cv05" on, "cv06" on;
 }
 
 .input__label {
@@ -41,6 +44,7 @@
 .input input {
   outline: 0;
   width: 100%;
+  font-family: inherit;
   color: inherit;
   height: inherit;
   padding: 0 var(--space-sm);
