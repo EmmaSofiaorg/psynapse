@@ -5,10 +5,10 @@ const API_URL = "https://apitest.vipps.no";
 
 const SITE_URL = "https://psynapse.no";
 
-const client_id = process.env.CLIENT_ID;
-const client_secret = process.env.CLIENT_SECRET;
-const subscription_key = process.env.SUBSCRIPTION_KEY;
-const merchant_serialnumber = process.env.MERCHANT_SERIALNUMBER;
+const client_id = process.env.VIPPS_CLIENT_ID;
+const client_secret = process.env.VIPPS_CLIENT_SECRET;
+const subscription_key = process.env.VIPPS_SUBSCRIPTION_KEY;
+const merchant_serialnumber = process.env.VIPPS_MERCHANT_SERIALNUMBER;
 
 async function getToken() {
   return fetch(`${API_URL}/accesstoken/get`, {
