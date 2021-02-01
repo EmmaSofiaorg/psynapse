@@ -1,10 +1,9 @@
 import Head from "next/head";
 
-import ArticleLayout from "../layout/ArticleLayout";
+import ArticleLayout from "../../layout/ArticleLayout";
 
-import Hero from "../components/Hero";
-import Text from "../primitives/Text";
-import Container from "../primitives/Container";
+import Hero from "../../components/Hero";
+import Text from "../../primitives/Text";
 
 export default function Vilkar({}) {
   return (

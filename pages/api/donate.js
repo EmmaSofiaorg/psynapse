@@ -44,10 +44,10 @@ async function donateOnce({ amount }) {
         authToken: access_token,
         callbackPrefix: `${SITE_URL}/vipps/callbacks-for-payment-updates`,
         consentRemovalPrefix: `${SITE_URL}/vipps`,
-        fallBack: `${SITE_URL}/vipps/fallback-order-result-page/order123abc`,
+        fallBack: `${SITE_URL}/vipps/takk`,
         isApp: false,
         merchantSerialNumber: merchant_serialnumber,
-        paymentType: "eComm Regular Payment",
+        paymentType: "Regular Donation",
       },
       transaction: {
         amount: amount ? amount * 100 : 20000,
