@@ -1,10 +1,10 @@
 :root {
   /* SPACE */
-  --space-sm: clamp(8px, 3vw, 12px);
-  --space-md: clamp(12px, 5vw, 24px);
-  --space-lg: clamp(24px, 10vw, 56px);
-  --space-xl: clamp(48px, 15vw, 97px);
-  --space-xxl: clamp(97px, 20vw, 164px);
+  --space-sm: clamp(8px, 1.6vw, 12px);
+  --space-md: clamp(12px, 3.2vw, 24px);
+  --space-lg: clamp(24px, 7.4vw, 56px);
+  --space-xl: clamp(48px, 10.2vw, 97px);
+  --space-xxl: clamp(97px, 20.7vw, 164px);
 
   --page-bleed: clamp(16px, 5.9vw, 75px);
 
