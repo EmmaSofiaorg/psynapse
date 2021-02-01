@@ -20,3 +20,8 @@
 .footer__links li {
   margin-bottom: var(--space-md);
 }
+
+.footer__logo {
+  padding-top: var(--space-xxl);
+  padding-bottom: var(--space-xl);
+}

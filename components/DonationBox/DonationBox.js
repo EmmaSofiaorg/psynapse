@@ -40,6 +40,7 @@ export default function DonationBox({ heading = "", ingress = "", body = "" }) {
       },
       body: JSON.stringify({
         amount: donationValue,
+        method: donationFrequency,
       }),
     })
       .then((res) =>
