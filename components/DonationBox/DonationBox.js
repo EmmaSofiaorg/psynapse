@@ -45,7 +45,10 @@ export default function DonationBox({ heading = "", ingress = "", body = "" }) {
     })
       .then((res) =>
         res.json().then((data) => {
-          window.location = data.url;
+          if (data.url) {
+            window.location = data.url;
+          }
+          setLoading(false);
         })
       )
       .catch((e) => {
