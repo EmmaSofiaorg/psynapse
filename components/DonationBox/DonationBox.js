@@ -63,12 +63,9 @@ export default function DonationBox({ heading = "", ingress = "", body = "" }) {
         <Text tag="h2" variant="heading-sm">
           {ingress}
         </Text>
-        <Text tag="p" variant="body">
+        <Text html tag="p" variant="body">
           {body}
         </Text>
-        <Link href="/stott" full prefix="→">
-          Les mer
-        </Link>
         <Illustration
           style={{ maxWidth: "200px", marginTop: "var(--space-xl)" }}
         />

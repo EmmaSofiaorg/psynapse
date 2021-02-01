@@ -50,7 +50,7 @@ export default function Header() {
               Prosjekter
             </a>
           </Link>
-          <Link href="/">
+          <Link href="/support">
             <a
               className="header__menu-page-link"
               onClick={() => setOpen(!open)}
