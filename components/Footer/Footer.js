@@ -3,24 +3,29 @@ import "./Footer.css";
 import Link from "../../primitives/Link";
 import Logo from "../../public/assets/illustrations/logo.svg";
 
-export default function Footer() {
+export default function Footer({ contactInfo }) {
   return (
     <footer className="footer">
       <div className="footer__wrapper">
         <ul className="footer__links">
           <li>
-            <Link href="https://www.facebook.com/psynapse" postfix="↗">
+            <Link href={contactInfo.facebookUrl} postfix="↗">
               Facebook
             </Link>
           </li>
           <li>
-            <Link href="https://www.mailchimp.com/psynapse" postfix="↗">
-              Nyhetsbrev
+            <Link href={`mailto:${contactInfo.email}`} postfix="↗">
+              {contactInfo.email}
             </Link>
           </li>
           <li>
-            <Link href="https://goo.gl/maps/W7VrmCcuR2ym9i8X9" postfix="↗">
-              c/o Jørn Kløvfjell Mjelva, Jens Bjelkes gate 82E
+            <Link href={`tel:${contactInfo.phoneNumber}`} postfix="↗">
+              {contactInfo.phoneNumber}
+            </Link>
+          </li>
+          <li>
+            <Link href={contactInfo.addressUrl} postfix="↗">
+              {contactInfo.address}
             </Link>
           </li>
         </ul>
