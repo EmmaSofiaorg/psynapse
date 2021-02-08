@@ -38,12 +38,7 @@ export default function Projects({ subscription }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Hero
-        size="sm"
-        illustration="circle"
-        heading="Prosjekter"
-        ingress="Bla bla bla bla"
-      />
+      <Hero size="sm" illustration="circle" heading="Prosjekter" />
 
       <ProjectList items={data.allProjects} />
     </div>
