@@ -5,6 +5,7 @@ import "./Container.css";
 export default function Container({
   style,
   className,
+  position,
   width = "xl",
   full,
   children,
@@ -13,6 +14,7 @@ export default function Container({
     container: true,
     [className]: className,
     "container--full": full,
+    [`container--${position}`]: position,
     [`container--${width}`]: width,
   });
 

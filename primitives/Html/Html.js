@@ -27,7 +27,8 @@ const block = {
     );
   },
   a: (node, index) => {
-    if (!node.prev && !node.next) {
+    console.log({ node, index });
+    if (!node.prev && !node.next && node.parent.name === "p") {
       return (
         <Link key={index} href={node.attribs.href} prefix="→">
           {node.children.map((child, index) =>

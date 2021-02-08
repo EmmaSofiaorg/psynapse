@@ -40,7 +40,9 @@ const blocks = {
     <Container
       key={index}
       full={full}
-      style={{ marginBottom: "var(--space-xl)" }}
+      width="md"
+      position="left"
+      style={{ marginLeft: "0", marginBottom: "var(--space-xl)" }}
     >
       <Text html tag="h2" variant="heading-md">
         {props.heading}

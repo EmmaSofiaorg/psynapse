@@ -41,6 +41,15 @@ export default function Header() {
               Home
             </a>
           </Link>
+          <Link href="/mdma-psykedelika">
+            <a
+              className="header__menu-page-link"
+              onClick={() => setOpen(!open)}
+              style={{ "--item-order": 2 }}
+            >
+              MDMA og Psykedelika
+            </a>
+          </Link>
           <Link href="/projects">
             <a
               className="header__menu-page-link"

@@ -15,12 +15,12 @@ export default function Footer({ contactInfo }) {
           </li>
           <li>
             <Link href={`mailto:${contactInfo.email}`} postfix="↗">
-              {contactInfo.email}
+              Org.no: {contactInfo.orgNo}
             </Link>
           </li>
           <li>
-            <Link href={`tel:${contactInfo.phoneNumber}`} postfix="↗">
-              {contactInfo.phoneNumber}
+            <Link href={`mailto:${contactInfo.email}`} postfix="↗">
+              {contactInfo.email}
             </Link>
           </li>
           <li>

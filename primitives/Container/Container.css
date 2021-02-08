@@ -10,6 +10,18 @@
   margin: 0 auto;
 }
 
+.container--left .container__wrapper {
+  margin-left: 0;
+}
+
+.container--right .container__wrapper {
+  margin-right: 0;
+}
+
+.container--center .container__wrapper {
+  margin-right: 0 auto;
+}
+
 .container--xs .container__wrapper {
   max-width: var(--container-xs);
 }

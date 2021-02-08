@@ -13,7 +13,7 @@ async function getContactInfo() {
       {
         contactInfo {
           email
-          phoneNumber
+          orgNo
           facebookUrl
           address
           addressUrl
