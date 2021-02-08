@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { createSubscription } from "../lib/api";
-import { useQuerySubscription } from "react-datocms";
+import { useQuerySubscription, renderMetaTags } from "react-datocms";
 
 import Hero from "../components/Hero";
 import Blocks from "../components/Blocks";
@@ -14,6 +14,11 @@ export async function getStaticProps(context) {
           query {
             frontpage {
               heading
+              seo: _seoMetaTags {
+                tag
+                content
+                attributes
+              }
               blocks {
                 ... on PersonListRecord {
                   _modelApiKey
@@ -72,10 +77,7 @@ export default function Home({ subscription }) {
 
   return (
     <div>
-      <Head>
-        <title>Psynapse</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      <Head>{renderMetaTags(data.frontpage.seo)}</Head>
 
       <Hero illustration="circle" heading={data.frontpage.heading} />
 

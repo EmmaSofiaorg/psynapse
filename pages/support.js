@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { createSubscription } from "../lib/api";
-import { useQuerySubscription } from "react-datocms";
+import { renderMetaTags, useQuerySubscription } from "react-datocms";
 
 import Hero from "../components/Hero";
 import Blocks from "../components/Blocks";
@@ -14,6 +14,11 @@ export async function getStaticProps(context) {
           query {
             supportpage {
               heading
+              seo: _seoMetaTags {
+                tag
+                content
+                attributes
+              }
               blocks {
                 ... on TwoColumnGridRecord {
                   _modelApiKey
@@ -74,10 +79,7 @@ export default function Support({ subscription }) {
 
   return (
     <div>
-      <Head>
-        <title>Psynapse</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      <Head>{renderMetaTags(data.supportpage.seo)}</Head>
 
       <div className="halla">
         <Hero

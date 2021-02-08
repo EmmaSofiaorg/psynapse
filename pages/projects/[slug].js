@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { createSubscription } from "../../lib/api";
-import { useQuerySubscription } from "react-datocms";
+import { renderMetaTags, useQuerySubscription } from "react-datocms";
 
 import Container from "../../primitives/Container";
 import Text from "../../primitives/Text";
@@ -30,6 +30,11 @@ export async function getServerSideProps(context) {
               description
               illustration
               url
+              seo: _seoMetaTags {
+                tag
+                content
+                attributes
+              }
               blocks {
                 ... on TextRecord {
                   _modelApiKey
@@ -56,10 +61,7 @@ export default function Project({ subscription }) {
 
   return (
     <div>
-      <Head>
-        <title>Psynapse</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      <Head>{renderMetaTags(data.project.seo)}</Head>
 
       <Container>
         <div className="project-layout">
