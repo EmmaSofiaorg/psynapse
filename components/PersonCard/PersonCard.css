@@ -1,7 +1,10 @@
 .person-card {
+  line-break: anywhere;
+  white-space: pre-line;
 }
 
 .person-card__image {
+  object-fit: cover;
   width: 100%;
   aspect-ratio: 1 / 1;
   margin-bottom: var(--space-md);

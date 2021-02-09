@@ -13,8 +13,12 @@ export default function PersonCard({ name, email, phoneNumber, job, image }) {
       <Text tag="p" noMargin>
         {job}
       </Text>
-      <Link href={`mailto:${email}`}>{email}</Link>
-      <Link href={`tel:${phoneNumber}`}>{phoneNumber}</Link>
+      <Link full href={`mailto:${email}`}>
+        {email}
+      </Link>
+      <Link full href={`tel:${phoneNumber}`}>
+        {phoneNumber}
+      </Link>
     </article>
   );
 }

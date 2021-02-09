@@ -104,10 +104,9 @@ export default async function handler(req, res) {
         console.log(e.message);
         const error = new Error();
         error.message = "Unable to fetch!";
-        res.end(error);
+        res.status(500).end(error.toString());
       });
-  }
-  if (method === "monthly") {
+  } else if (method === "monthly") {
     donateMonthly({ amount })
       .then((response) => {
         console.log(response);
@@ -117,7 +116,11 @@ export default async function handler(req, res) {
         console.log(e.message);
         const error = new Error();
         error.message = "Unable to fetch!";
-        res.end(error);
+        res.status(500).end(error.toString());
       });
+  } else {
+    const error = new Error();
+    error.message = "Something wrong happened!";
+    res.status(500).end(error.toString());
   }
 }

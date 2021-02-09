@@ -5,6 +5,8 @@ import "./Header.css";
 
 import Text from "../../primitives/Text";
 import Logo from "../../public/assets/illustrations/logo.svg";
+import Input from "../../primitives/Input";
+import Button from "../../primitives/Button";
 
 export default function Header() {
   const [open, setOpen] = useState(false);

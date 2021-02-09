@@ -96,7 +96,7 @@ export default function DonationBox({ heading = "", ingress = "", body = "" }) {
         )}
 
         <Button onClick={() => donate()}>
-          {loading ? "Vennligst vent" : "Gi med vipps"}
+          {loading ? "Vennligst vent..." : "Gi med vipps"}
         </Button>
       </div>
     </div>
