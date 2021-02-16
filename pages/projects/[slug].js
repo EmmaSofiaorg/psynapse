@@ -41,6 +41,7 @@ export async function getServerSideProps(context) {
                   heading
                   body
                   columns
+                  full
                 }
                 ... on QuoteRecord {
                   _modelApiKey
