@@ -95,6 +95,8 @@ async function donateMonthly({ amount }) {
 export default async function handler(req, res) {
   const { amount, method } = req.body;
 
+  console.log("tying  to call" + API_URL);
+
   if (method === "once") {
     donateOnce({ amount })
       .then((response) => {
