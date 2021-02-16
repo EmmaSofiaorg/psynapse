@@ -98,6 +98,7 @@ export default async function handler(req, res) {
   if (method === "once") {
     donateOnce({ amount })
       .then((response) => {
+        console.log(response);
         res.end(JSON.stringify({ url: response.url }));
       })
       .catch((e) => {
