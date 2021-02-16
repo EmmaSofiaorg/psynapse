@@ -1,7 +1,7 @@
 import { customAlphabet } from "nanoid";
 const nanoid = customAlphabet("1234567890abcdefghijklmnopqrstuvxyz", 10);
 
-const API_URL = "https://apitest.vipps.no";
+const API_URL = process.env.VIPPS_API_URL;
 
 const SITE_URL = "https://psynapse.no";
 
