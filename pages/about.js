@@ -44,6 +44,7 @@ export async function getStaticProps(context) {
                   heading
                   body
                   columns
+                  full
                 }
                 ... on QuoteRecord {
                   _modelApiKey

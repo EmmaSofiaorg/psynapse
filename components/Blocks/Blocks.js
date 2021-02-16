@@ -39,8 +39,7 @@ const blocks = {
   text: (props, index, full) => (
     <Container
       key={index}
-      full={full}
-      width="md"
+      width={props.full ? "xl" : "md"}
       position="left"
       style={{ marginLeft: "0", marginBottom: "var(--space-xl)" }}
     >
