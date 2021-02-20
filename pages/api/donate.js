@@ -42,7 +42,7 @@ async function donateOnce({ amount }) {
       },
       merchantInfo: {
         authToken: access_token,
-        callbackPrefix: `${SITE_URL}/vipps/takk`,
+        callbackPrefix: `${SITE_URL}`,
         consentRemovalPrefix: `${SITE_URL}/vilkar`,
         fallBack: `${SITE_URL}/vipps/takk`,
         isApp: false,
@@ -82,7 +82,7 @@ async function donateMonthly({ amount }) {
       interval: "MONTH",
       intervalCount: 1,
       isApp: false,
-      merchantRedirectUrl: `${SITE_URL}/vipps/takk`,
+      merchantRedirectUrl: `${SITE_URL}`,
       merchantAgreementUrl: `${SITE_URL}/vipps/vilkar`,
       price: amount ? amount * 100 : 20000,
       productDescription: "Takk for støtten!",
