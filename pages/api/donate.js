@@ -33,7 +33,7 @@ async function donateOnce({ amount }) {
       "Vipps-System-Name": "psynapse",
       "Vipps-System-Version": "1.0",
       "Merchant-Serial-Number": merchant_serialnumber,
-      "Ocp-Apim-Subscription-Key": "878ea4a3561f4ca19a48c8c318b8eb95",
+      "Ocp-Apim-Subscription-Key": subscription_key,
     },
     method: "POST",
     body: JSON.stringify({
@@ -73,7 +73,7 @@ async function donateMonthly({ amount }) {
       "Vipps-System-Name": "psynapse",
       "Vipps-System-Version": "1.0",
       "Merchant-Serial-Number": merchant_serialnumber,
-      "Ocp-Apim-Subscription-Key": "878ea4a3561f4ca19a48c8c318b8eb95",
+      "Ocp-Apim-Subscription-Key": subscription_key,
     },
     method: "POST",
     body: JSON.stringify({
