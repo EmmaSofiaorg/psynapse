@@ -5,7 +5,7 @@ import outlineWatcher from "../utils/outlineWatcher";
 
 import BaseLayout from "../layout/BaseLayout";
 import { useEffect, useState } from "react";
-import { getData } from "../lib/api";
+import { getData } from "../services/dato";
 
 async function getContactInfo() {
   return getData({
