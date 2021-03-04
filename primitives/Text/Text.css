@@ -16,7 +16,7 @@
   line-height: 1.15;
   margin-bottom: var(--space-xl);
   letter-spacing: -0.01em;
-  font-feature-settings: "ss01";
+  font-feature-settings: "ss01", "ss02", "ss03", "ss04", "ss05", "ss06";
 }
 
 .text--heading-md {
@@ -27,7 +27,7 @@
   line-height: 1.25;
   margin-bottom: var(--space-md);
   letter-spacing: -0.01em;
-  font-feature-settings: "liga" on;
+  font-feature-settings: "ss01", "ss02", "ss03", "ss04", "ss05", "ss06";
 }
 
 .text--heading-sm {
@@ -38,7 +38,7 @@
   line-height: 1.25;
   margin-bottom: var(--space-md);
   letter-spacing: -0.01em;
-  font-feature-settings: "liga" on;
+  font-feature-settings: "ss01", "ss02", "ss03", "ss04", "ss05", "ss06";
 }
 
 .text--heading-sub {
@@ -49,7 +49,7 @@
   line-height: 1.35;
   margin-bottom: var(--space-md);
   letter-spacing: -0.01em;
-  font-feature-settings: "liga" on;
+  font-feature-settings: "ss01", "ss02", "ss03", "ss04", "ss05", "ss06";
 }
 
 .text--body {

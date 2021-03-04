@@ -1,5 +1,6 @@
 import "../styles/globals.css";
 import "../styles/variables.css";
+import "../styles/fonts.css";
 
 import outlineWatcher from "../utils/outlineWatcher";
 
