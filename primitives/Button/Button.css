@@ -19,3 +19,13 @@
   background: var(--color-vibrant-blue);
   color: var(--color-white);
 }
+
+.button--primary {
+  background: var(--color-vibrant-blue);
+  color: var(--color-white);
+}
+
+.button--primary:hover {
+  background: var(--color-vibrant-blue-hover);
+  color: var(--color-white);
+}

@@ -8,7 +8,7 @@ import Link from "../../primitives/Link";
 import Illustration from "../../public/assets/illustrations/shapes-in-row.svg";
 
 export default function DonationBox({ heading = "", ingress = "", body = "" }) {
-  const [donationFrequency, setDonationFrequency] = useState("monthly");
+  const [donationFrequency, setDonationFrequency] = useState("once");
   const [donationSize, setDonationSize] = useState("small");
   const [donationValue, setDonationValue] = useState(100);
   const [loading, setLoading] = useState(false);
@@ -72,14 +72,6 @@ export default function DonationBox({ heading = "", ingress = "", body = "" }) {
       </div>
       <div>
         <ButtonGroup
-          value={donationFrequency}
-          onChange={setDonationFrequency}
-          options={[
-            { label: "Gi månedlig", value: "monthly" },
-            { label: "Gi én gang", value: "once" },
-          ]}
-        />
-        <ButtonGroup
           value={donationSize}
           onChange={setDonationSize}
           options={donationsOptions}
@@ -95,7 +87,7 @@ export default function DonationBox({ heading = "", ingress = "", body = "" }) {
           />
         )}
 
-        <Button onClick={() => donate()}>
+        <Button variant="primary" onClick={() => donate()}>
           {loading ? "Vennligst vent..." : "Gi med vipps"}
         </Button>
       </div>
