@@ -3,7 +3,7 @@
   grid-template-columns: 1fr;
   grid-gap: var(--space-lg);
   width: 100%;
-  padding: var(--space-lg);
+  padding: var(--page-bleed);
   background: var(--color-dusty-lilac);
   margin-bottom: var(--space-xl);
 }

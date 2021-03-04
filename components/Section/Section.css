@@ -2,7 +2,7 @@
   width: 100%;
   padding-left: var(--page-bleed);
   padding-right: var(--page-bleed);
-  margin-bottom: var(--space-xl);
+  margin-bottom: var(--section-padding);
 }
 
 .section__wrapper {

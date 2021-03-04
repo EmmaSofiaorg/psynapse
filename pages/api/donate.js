@@ -10,6 +10,18 @@ const client_secret = process.env.VIPPS_CLIENT_SECRET;
 const subscription_key = process.env.VIPPS_SUBSCRIPTION_KEY;
 const merchant_serialnumber = process.env.VIPPS_MERCHANT_SERIALNUMBER;
 
+function genereateAuthHeaders(access_token) {
+  return {
+    Accept: "application/json",
+    "Content-Type": "application/json",
+    Authorization: `Bearer ${access_token}`,
+    "Vipps-System-Name": "psynapse",
+    "Vipps-System-Version": "1.0",
+    "Merchant-Serial-Number": merchant_serialnumber,
+    "Ocp-Apim-Subscription-Key": subscription_key,
+  };
+}
+
 async function getToken() {
   return fetch(`${API_URL}/accesstoken/get`, {
     headers: {
@@ -26,15 +38,7 @@ async function getToken() {
 async function donateOnce({ amount }) {
   const { access_token } = await getToken();
   return fetch(`${API_URL}/ecomm/v2/payments`, {
-    headers: {
-      Accept: "application/json",
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${access_token}`,
-      "Vipps-System-Name": "psynapse",
-      "Vipps-System-Version": "1.0",
-      "Merchant-Serial-Number": merchant_serialnumber,
-      "Ocp-Apim-Subscription-Key": subscription_key,
-    },
+    headers: genereateAuthHeaders(access_token),
     method: "POST",
     body: JSON.stringify({
       customerInfo: {
@@ -55,8 +59,8 @@ async function donateOnce({ amount }) {
         timeStamp: new Date(),
         transactionText: "Donation",
         skipLandingPage: false,
-        scope: "name address email",
-        useExplicitCheckoutFlow: true,
+        scope: "name email",
+        useExplicitCheckoutFlow: false,
       },
     }),
   }).then((response) => response.json());
@@ -66,17 +70,16 @@ async function donateMonthly({ amount }) {
   const { access_token } = await getToken();
 
   return fetch(`${API_URL}/recurring/v2/agreements`, {
-    headers: {
-      Accept: "application/json",
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${access_token}`,
-      "Vipps-System-Name": "psynapse",
-      "Vipps-System-Version": "1.0",
-      "Merchant-Serial-Number": merchant_serialnumber,
-      "Ocp-Apim-Subscription-Key": subscription_key,
-    },
+    headers: genereateAuthHeaders(access_token),
     method: "POST",
     body: JSON.stringify({
+      initialCharge: {
+        amount: amount ? amount * 100 : 20000,
+        currency: "NOK",
+        description: "Donasjon til Psynapse",
+        transactionType: "DIRECT_CAPTURE",
+        orderId: nanoid(),
+      },
       currency: "NOK",
       customerPhoneNumber: null,
       interval: "MONTH",
@@ -87,7 +90,7 @@ async function donateMonthly({ amount }) {
       price: amount ? amount * 100 : 20000,
       productDescription: "Takk for støtten!",
       productName: "Fast donasjon til Psynapse",
-      scope: "address name email birthDate phoneNumber",
+      scope: "name email",
     }),
   }).then((response) => response.json());
 }

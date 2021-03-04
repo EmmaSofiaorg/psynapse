@@ -23,13 +23,12 @@ export default function Vilkar({}) {
         <Text tag="p" variant="body">
           Når du donerer et engangsbeløp trekkes beløpet fra kortet ditt. Ved
           fast donasjon trekkes beløpet fra kortet ditt en gang i måneden. Det
-          er ingen bindingstid, og du kan når som helst avslutte den faste
-          betalingen via Vipps-appen.
+          er ingen bindingstid.
         </Text>
         <Text tag="p" variant="body">
-          Du kan også kontakte oss for hjelp til å avslutte betalingene. Uansett
-          om du donerer et engangsbeløp eller gir en månedlig donasjon, vil navn
-          og nummer vil fremkomme av transaksjonsoversikten. Vi deler ikke disse
+          Du kan kontakte oss for hjelp til å avslutte betalingene. Uansett om
+          du donerer et engangsbeløp eller gir en månedlig donasjon, vil navn og
+          nummer vil fremkomme av transaksjonsoversikten. Vi deler ikke disse
           opplysningene med andre.
         </Text>
       </ArticleLayout>

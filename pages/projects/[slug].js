@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { createSubscription } from "../../lib/api";
+import { createSubscription } from "../../services/dato";
 import { renderMetaTags, useQuerySubscription } from "react-datocms";
 
 import Container from "../../primitives/Container";
@@ -80,11 +80,10 @@ export default function Project({ subscription }) {
               {Illustration[data.project.illustration]}
             </div>
             <div className="project-layout__info-box">
-              <Text variant="heading-sub">Om prosjektet</Text>
+              <Text variant="heading-sm">Om prosjektet</Text>
               <Text tag="p" variant="body">
                 {data.project.description}
               </Text>
-              <Link>Les mer</Link>
             </div>
           </div>
         </div>

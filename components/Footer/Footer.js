@@ -9,22 +9,38 @@ export default function Footer({ contactInfo }) {
       <div className="footer__wrapper">
         <ul className="footer__links">
           <li>
-            <Link href={contactInfo.facebookUrl} postfix="↗">
+            <Link
+              style={{ "--postfix-color": "currentColor" }}
+              href={contactInfo.facebookUrl}
+              postfix="↗"
+            >
               Facebook
             </Link>
           </li>
           <li>
-            <Link href={`mailto:${contactInfo.email}`} postfix="↗">
+            <Link
+              style={{ "--postfix-color": "currentColor" }}
+              href={`https://w2.brreg.no/enhet/sok/detalj.jsp?orgnr=914740045`}
+              postfix="↗"
+            >
               Org.no: {contactInfo.orgNo}
             </Link>
           </li>
           <li>
-            <Link href={`mailto:${contactInfo.email}`} postfix="↗">
+            <Link
+              style={{ "--postfix-color": "currentColor" }}
+              href={`mailto:${contactInfo.email}`}
+              postfix="↗"
+            >
               {contactInfo.email}
             </Link>
           </li>
           <li>
-            <Link href={contactInfo.addressUrl} postfix="↗">
+            <Link
+              style={{ "--postfix-color": "currentColor" }}
+              href={contactInfo.addressUrl}
+              postfix="↗"
+            >
               {contactInfo.address}
             </Link>
           </li>

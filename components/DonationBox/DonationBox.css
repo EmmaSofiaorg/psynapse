@@ -3,9 +3,9 @@
   grid-template-columns: 1fr;
   grid-gap: var(--space-xl);
   width: 100%;
-  padding: var(--space-xl);
+  padding: var(--space-xl) var(--page-bleed);
   background: var(--color-dusty-lilac);
-  margin-bottom: var(--space-xl);
+  margin-bottom: var(--section-padding);
 }
 
 @media (min-width: 1100px) {

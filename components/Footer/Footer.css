@@ -1,5 +1,5 @@
 .footer {
-  padding-top: var(--container-xs);
+  padding-top: var(--page-bleed);
   padding-left: var(--page-bleed);
   padding-right: var(--page-bleed);
   padding-bottom: var(--page-bleed);
@@ -14,14 +14,12 @@
   margin: 0;
   padding: 0;
   list-style: none;
-  margin-bottom: var(--space-xl);
+  padding-bottom: var(--space-xxl);
 }
 
 .footer__links li {
-  margin-bottom: var(--space-md);
+  margin-bottom: var(--space-xs);
 }
 
 .footer__logo {
-  padding-top: var(--space-xxl);
-  padding-bottom: var(--space-xl);
 }

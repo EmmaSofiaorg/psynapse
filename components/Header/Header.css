@@ -36,15 +36,15 @@
 .header__menu-button {
   cursor: pointer;
   outline: 0;
-  padding: var(--space-md);
-  font-size: var(--fs-body);
+  padding: var(--space-sm) 0 var(--space-md) 0;
+  font-size: var(--fs-ingress);
   border: 0;
   background: none;
 }
 
 .header__menu-button::after {
   vertical-align: center;
-  font-size: var(--fs-ingress);
+  font-size: var(--fs-heading-sub);
   padding-left: var(--space-md);
 }
 
@@ -70,12 +70,18 @@
   display: block;
   cursor: pointer;
   font-weight: 500;
+  line-height: 1.15;
+  margin-bottom: var(--space-md);
   /* stagger animation */
   animation-name: animateIn;
   animation-duration: 250ms;
   animation-delay: calc(var(--item-order) * 100ms);
   animation-fill-mode: both;
   animation-timing-function: ease-in-out;
+}
+
+.header__menu-page-link:hover {
+  text-decoration: underline;
 }
 
 .header--open .header__menu {
@@ -98,6 +104,23 @@
   outline: 0;
   background: var(--color-white);
   width: 100%;
+  margin-bottom: var(--space-sm);
+}
+
+.header__subscribe-button {
+  font-size: inherit;
+  color: currentColor;
+  cursor: pointer;
+  border: 2px solid var(--color-white);
+  height: var(--element-md);
+  background: none;
+  width: 100%;
+}
+
+.header__subscribe-button:hover {
+  color: var(--color-vibrant-blue);
+  border-color: var(--color-white);
+  background-color: var(--color-white);
 }
 
 @media (min-width: 1100px) {

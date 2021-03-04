@@ -19,7 +19,7 @@
 }
 
 .hero__content {
-  max-width: var(--container-lg);
+  max-width: var(--container-md);
   padding-bottom: var(--space-xxl);
 }
 

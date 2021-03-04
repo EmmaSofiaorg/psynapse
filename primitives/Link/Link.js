@@ -9,6 +9,7 @@ export default function Link({
   prefix = null,
   full = false,
   children,
+  style,
 }) {
   const classNames = cn({
     link: true,
@@ -17,7 +18,7 @@ export default function Link({
 
   return (
     <NextLink href={href}>
-      <a className={classNames}>
+      <a style={style} className={classNames}>
         {prefix && <span className="link__prefix">{prefix}</span>}
         <span className="link__el">{children}</span>
         {postfix && <span className="link__postfix">{postfix}</span>}

@@ -1,5 +1,5 @@
 .project-list {
-  margin-bottom: var(--space-xl);
+  margin-bottom: var(--section-padding);
 }
 
 .project-list__description {
@@ -7,6 +7,7 @@
 }
 
 .project-list__items {
+  list-style-type: decimal-leading-zero;
   counter-reset: item;
   margin: 0;
   margin-top: var(--space-xl);
@@ -40,16 +41,18 @@
 }
 
 .project-list-item__counter {
+  font-size: var(--fs-heading-sub);
+  font-weight: 600;
   position: relative;
   max-width: clamp(60px, 5.5vw, 150px);
 }
 
 .project-list-item__counter::after {
-  content: counter(item);
+  content: counter(item, decimal-leading-zero);
   position: absolute;
-  top: 50%;
+  top: 45%;
   left: 50%;
-  transform: translateY(-50%) translateX(-50%);
+  transform: translateY(-45%) translateX(-50%);
 }
 
 .project-list-item__wrapper {
@@ -63,9 +66,9 @@
   align-items: center;
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 800px) {
   .project-list-item__wrapper {
-    grid-template-columns: 1fr 5fr 2fr;
+    grid-template-columns: 1fr 12fr 1fr;
   }
 }
 

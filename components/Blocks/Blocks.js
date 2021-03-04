@@ -41,6 +41,7 @@ const blocks = {
       key={index}
       width={props.full ? "xl" : "md"}
       position="left"
+      full={full}
       style={{ marginLeft: "0", marginBottom: "var(--space-xl)" }}
     >
       <Text html tag="h2" variant="heading-md">

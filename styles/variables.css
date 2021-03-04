@@ -1,12 +1,15 @@
 :root {
   /* SPACE */
+  --space-xs: clamp(4px, 1.2vw, 8px);
   --space-sm: clamp(8px, 1.6vw, 12px);
   --space-md: clamp(12px, 3.2vw, 24px);
   --space-lg: clamp(24px, 7.4vw, 56px);
-  --space-xl: clamp(48px, 10.2vw, 97px);
-  --space-xxl: clamp(97px, 20.7vw, 164px);
+  --space-xl: clamp(48px, 10.2vw, 96px);
+  --space-xxl: clamp(96px, 20.7vw, 164px);
 
-  --page-bleed: clamp(16px, 5.9vw, 75px);
+  --section-padding: clamp(96px, 20.7vw, 200px);
+
+  --page-bleed: clamp(16px, 3vw, 75px);
 
   --header-height: clamp(120px, 19.1vw, 200px);
 

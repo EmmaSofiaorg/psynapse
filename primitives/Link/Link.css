@@ -8,13 +8,13 @@
 .link__prefix {
   font-weight: 500;
   color: var(--postfix-color);
-  padding-right: var(--space-md);
+  padding-right: var(--space-xs);
 }
 
 .link__postfix {
   font-weight: 500;
   color: var(--postfix-color);
-  padding-left: var(--space-md);
+  padding-left: var(--space-xs);
 }
 
 .link__el {

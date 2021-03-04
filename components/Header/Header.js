@@ -111,11 +111,45 @@ export default function Header() {
                 En holdningsendring er nødvendig for å skape et åpent og bevisst
                 samfunn. Få siste nytt rett i innboksen din.
               </Text>
-              <input
-                className="header__subscribe-input"
-                placeholder="Din epost"
-                type="email"
-              />
+              <form
+                action="https://emmasofia.us13.list-manage.com/subscribe/post?u=d738f7fcdd8533e9b2fc684a8&amp;id=e22eb01ef0"
+                method="post"
+                id="mc-embedded-subscribe-form"
+                name="mc-embedded-subscribe-form"
+                target="_blank"
+                novalidate="novalidate"
+                class="validate"
+                data-np-checked="1"
+              >
+                <div id="mc_embed_signup_scroll">
+                  <input
+                    type="email"
+                    name="EMAIL"
+                    id="mce-EMAIL"
+                    placeholder="Din epostadresse"
+                    required="required"
+                    className="header__subscribe-input"
+                    data-np-checked="1"
+                  />
+                  <input
+                    type="submit"
+                    value="Meld meg på"
+                    name="subscribe"
+                    id="mc-embedded-subscribe"
+                    class="header__subscribe-button"
+                    data-np-checked="1"
+                  />
+
+                  <input
+                    type="text"
+                    name="b_d738f7fcdd8533e9b2fc684a8_e22eb01ef0"
+                    tabindex="-1"
+                    value=""
+                    hidden
+                    data-np-checked="1"
+                  />
+                </div>
+              </form>
             </div>
           </div>
         </div>
