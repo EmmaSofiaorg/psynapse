@@ -27,24 +27,17 @@ const block = {
     );
   },
   a: (node, index) => {
-    console.log({ node, index });
-    if (!node.prev && !node.next && node.parent.name === "p") {
-      return (
-        <Link key={index} href={node.attribs.href} prefix="→">
-          {node.children.map((child, index) =>
-            transform(child, index, transform)
-          )}
-        </Link>
-      );
-    } else {
-      return (
-        <Link href={node.attribs.href} key={index}>
-          {node.children.map((child, index) =>
-            transform(child, index, transform)
-          )}
-        </Link>
-      );
-    }
+    const isLast =
+      (!node.prev && !node.next && node.parent?.name === "p") ||
+      (node.next && node.next.data === "↵");
+
+    return (
+      <Link key={index} href={node.attribs.href} prefix={isLast ? "→" : null}>
+        {node.children.map((child, index) =>
+          transform(child, index, transform)
+        )}
+      </Link>
+    );
   },
   h1: (node, index) => (
     <Text key={index} tag="h1" variant="heading-md">

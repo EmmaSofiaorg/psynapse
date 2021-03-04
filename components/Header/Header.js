@@ -117,7 +117,7 @@ export default function Header() {
                 id="mc-embedded-subscribe-form"
                 name="mc-embedded-subscribe-form"
                 target="_blank"
-                novalidate="novalidate"
+                noValidate="novalidate"
                 className="validate"
                 data-np-checked="1"
               >
