@@ -6,6 +6,7 @@ import ButtonGroup from "../../primitives/ButtonGroup";
 import Button from "../../primitives/Button";
 import Link from "../../primitives/Link";
 import Illustration from "../../public/assets/illustrations/shapes-in-row.svg";
+import Html from "../../primitives/Html";
 
 export default function DonationBox({ heading = "", ingress = "", body = "" }) {
   const [donationFrequency, setDonationFrequency] = useState("once");
@@ -63,12 +64,8 @@ export default function DonationBox({ heading = "", ingress = "", body = "" }) {
         <Text tag="h2" variant="heading-sm">
           {ingress}
         </Text>
-        <Text html tag="p" variant="body">
-          {body}
-        </Text>
-        <Illustration
-          style={{ maxWidth: "200px", marginTop: "var(--space-xl)" }}
-        />
+        <Html>{body}</Html>
+        <Illustration style={{ maxWidth: "200px" }} />
       </div>
       <div>
         <ButtonGroup

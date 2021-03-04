@@ -10,6 +10,7 @@ export default function Footer({ contactInfo }) {
         <ul className="footer__links">
           <li>
             <Link
+              target="_blank"
               style={{ "--postfix-color": "currentColor" }}
               href={contactInfo.facebookUrl}
               postfix="↗"
@@ -19,6 +20,7 @@ export default function Footer({ contactInfo }) {
           </li>
           <li>
             <Link
+              target="_blank"
               style={{ "--postfix-color": "currentColor" }}
               href={`https://w2.brreg.no/enhet/sok/detalj.jsp?orgnr=914740045`}
               postfix="↗"
@@ -28,6 +30,7 @@ export default function Footer({ contactInfo }) {
           </li>
           <li>
             <Link
+              target="_blank"
               style={{ "--postfix-color": "currentColor" }}
               href={`mailto:${contactInfo.email}`}
               postfix="↗"
@@ -37,6 +40,7 @@ export default function Footer({ contactInfo }) {
           </li>
           <li>
             <Link
+              target="_blank"
               style={{ "--postfix-color": "currentColor" }}
               href={contactInfo.addressUrl}
               postfix="↗"

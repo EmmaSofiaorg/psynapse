@@ -12,7 +12,11 @@ import Quote from "../../components/Quote";
 
 const blocks = {
   two_column_grid: (props, index, full) => (
-    <Container key={index} full style={{ marginBottom: "var(--space-xl)" }}>
+    <Container
+      key={index}
+      full
+      style={{ marginBottom: "var(--section-padding)" }}
+    >
       <Grid columns="2" gap="none">
         <GridItem
           style={{
@@ -42,7 +46,7 @@ const blocks = {
       width={props.full ? "xl" : "md"}
       position="left"
       full={full}
-      style={{ marginLeft: "0", marginBottom: "var(--space-xl)" }}
+      style={{ marginLeft: "0", marginBottom: "var(--section-padding)" }}
     >
       <Text html tag="h2" variant="heading-md">
         {props.heading}

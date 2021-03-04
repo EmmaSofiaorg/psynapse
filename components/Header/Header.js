@@ -118,7 +118,7 @@ export default function Header() {
                 name="mc-embedded-subscribe-form"
                 target="_blank"
                 novalidate="novalidate"
-                class="validate"
+                className="validate"
                 data-np-checked="1"
               >
                 <div id="mc_embed_signup_scroll">
@@ -136,7 +136,7 @@ export default function Header() {
                     value="Meld meg på"
                     name="subscribe"
                     id="mc-embedded-subscribe"
-                    class="header__subscribe-button"
+                    className="header__subscribe-button"
                     data-np-checked="1"
                   />
 
