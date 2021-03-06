@@ -34,8 +34,8 @@
   --fs-footnote: clamp(13px, 1vw, 18px);
   --line-height: 1.5;
 
-  --element-lg: 85px;
-  --element-md: 60px;
+  --element-lg: clamp(64px, 4.5vw, 86px);
+  --element-md: clamp(32px, 3.4vw, 64px);
 
   /* COLORS */
   --color-vibrant-blue: #5f5aff;

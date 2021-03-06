@@ -42,9 +42,11 @@
 
 .project-list-item__counter {
   font-size: var(--fs-heading-sub);
+  font-family: var(--ff-heading);
   font-weight: 600;
   position: relative;
   max-width: clamp(60px, 5.5vw, 150px);
+  font-feature-settings: "ss01", "ss02", "ss03", "ss04", "ss05", "ss06", "zero";
 }
 
 .project-list-item__counter::after {
