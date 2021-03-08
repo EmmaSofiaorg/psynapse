@@ -71,9 +71,10 @@ const block = {
   ),
 };
 
-export default function Html({ children, columns, style }) {
+export default function Html({ children, columns, style, noMargin }) {
   const classNames = cn({
     html: true,
+    "html--no-margin": noMargin,
     "html--columns-2": columns === "2",
   });
 

@@ -2,6 +2,10 @@
   margin-bottom: var(--space-xl);
 }
 
+.html--no-margin {
+  margin-bottom: 0;
+}
+
 @media (min-width: 800px) {
   .html--columns-2 {
     column-count: 2;

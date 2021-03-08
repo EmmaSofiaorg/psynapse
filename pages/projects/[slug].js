@@ -4,7 +4,7 @@ import { renderMetaTags, useQuerySubscription } from "react-datocms";
 
 import Container from "../../primitives/Container";
 import Text from "../../primitives/Text";
-import Link from "../../primitives/Link";
+import Html from "../../primitives/Html";
 import Blocks from "../../components/Blocks";
 
 import Drugs from "../../public/assets/illustrations/drugs.svg";
@@ -66,24 +66,31 @@ export default function Project({ subscription }) {
 
       <Container>
         <div className="project-layout">
-          <div className="project-layout__content">
+          <div className="project-layout__top-content">
             <Text tag="h1" variant="heading-lg">
               {data.project.heading}
             </Text>
             <Text tag="p" variant="ingress">
               {data.project.ingress}
             </Text>
-            <Blocks full blocks={data.project.blocks} />
           </div>
-          <div className="project-layout__sidebar">
-            <div className="project-layout__illustration">
-              {Illustration[data.project.illustration]}
+          <div className="project-layout__content">
+            <div
+              className="project-layout__blocks"
+              style={{ "--section-padding": "var(--space-xl)" }}
+            >
+              <Blocks full blocks={data.project.blocks} />
             </div>
-            <div className="project-layout__info-box">
-              <Text variant="heading-sm">Om prosjektet</Text>
-              <Text tag="p" variant="body">
-                {data.project.description}
-              </Text>
+            <div className="project-layout__sidebar">
+              <div className="project-layout__illustration">
+                {Illustration[data.project.illustration]}
+              </div>
+              <div className="project-layout__info-box">
+                <Text variant="heading-sm">Om prosjektet</Text>
+                <Html tag="p" variant="body" noMargin>
+                  {data.project.description}
+                </Html>
+              </div>
             </div>
           </div>
         </div>

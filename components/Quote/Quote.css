@@ -5,7 +5,7 @@
   width: 100%;
   padding: var(--page-bleed);
   background: var(--color-dusty-lilac);
-  margin-bottom: var(--space-xl);
+  margin-bottom: var(--section-padding);
 }
 
 .quote__illustration {
