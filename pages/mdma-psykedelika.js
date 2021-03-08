@@ -83,7 +83,7 @@ export default function DruginfoPage({ subscription }) {
     <div>
       <Head>{renderMetaTags(data.druginfoPage.seo)}</Head>
 
-      <div className="halla">
+      <div style={{ "--section-padding": "var(--space-xl)" }}>
         <Hero
           size="md"
           illustration="circle"

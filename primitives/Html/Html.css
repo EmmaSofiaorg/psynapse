@@ -1,5 +1,5 @@
 .html {
-  margin-bottom: var(--space-xl);
+  margin-bottom: var(--section-padding);
 }
 
 .html--no-margin {
