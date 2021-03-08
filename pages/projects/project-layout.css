@@ -20,10 +20,6 @@
   order: 1;
 }
 
-.project-layout__illustration {
-  margin-bottom: var(--space-xl);
-}
-
 .project-layout__info-box {
   background-color: var(--color-vibrant-blue);
   padding: var(--space-md);
@@ -40,10 +36,15 @@
   .project-layout__sidebar {
     order: 2;
   }
+  .project-layout__info-box-container {
+    position: sticky;
+    top: 0;
+    padding-top: var(--space-lg);
+  }
 }
 
 @media (min-width: 1500px) {
   .project-layout__content {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 5fr 4fr;
   }
 }

@@ -85,11 +85,13 @@ export default function Project({ subscription }) {
               <div className="project-layout__illustration">
                 {Illustration[data.project.illustration]}
               </div>
-              <div className="project-layout__info-box">
-                <Text variant="heading-sm">Om prosjektet</Text>
-                <Html tag="p" variant="body" noMargin>
-                  {data.project.description}
-                </Html>
+              <div className="project-layout__info-box-container">
+                <div className="project-layout__info-box">
+                  <Text variant="heading-sm">Om prosjektet</Text>
+                  <Html tag="p" variant="body" noMargin>
+                    {data.project.description}
+                  </Html>
+                </div>
               </div>
             </div>
           </div>
