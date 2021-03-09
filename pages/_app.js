@@ -7,6 +7,8 @@ import outlineWatcher from "../utils/outlineWatcher";
 import BaseLayout from "../layout/BaseLayout";
 import { useEffect, useState } from "react";
 import { getData } from "../services/dato";
+import Router from "next/router";
+import * as Fathom from "fathom-client";
 
 async function getContactInfo() {
   return getData({
@@ -24,6 +26,11 @@ async function getContactInfo() {
   });
 }
 
+// Record a pageview when route changes
+Router.events.on("routeChangeComplete", () => {
+  Fathom.trackPageview();
+});
+
 function MyApp({ Component, pageProps, subscription }) {
   const [contactInfo, setContactInfo] = useState({});
 
@@ -32,6 +39,14 @@ function MyApp({ Component, pageProps, subscription }) {
     getContactInfo().then((res) => {
       setContactInfo(res.contactInfo);
     });
+  }, []);
+
+  useEffect(() => {
+    if (process.env.NODE_ENV === "production") {
+      Fathom.load();
+      Fathom.setSiteId("PJBXYUKP");
+      Fathom.trackPageview();
+    }
   }, []);
 
   return (
