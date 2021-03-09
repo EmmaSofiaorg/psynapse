@@ -29,12 +29,10 @@ export async function getStaticProps(context) {
 export default function Projects({ subscription }) {
   const { data, error, status } = useQuerySubscription(subscription);
 
-  console.log({ data, error, status });
-
   return (
     <div>
       <Head>
-        <title>Psynapse</title>
+        <title>Prosjekter – Psynapse</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
