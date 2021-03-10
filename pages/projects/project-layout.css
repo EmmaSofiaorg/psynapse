@@ -21,9 +21,14 @@
 }
 
 .project-layout__info-box {
+  --postfix-color: var(--color-white);
   background-color: var(--color-vibrant-blue);
   padding: var(--space-md);
   color: var(--color-white);
+}
+
+.project-layout__info-box a {
+  --postfix-color: var(--color-white);
 }
 
 @media (min-width: 1000px) {
