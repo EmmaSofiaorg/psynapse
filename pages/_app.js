@@ -43,8 +43,7 @@ function MyApp({ Component, pageProps, subscription }) {
 
   useEffect(() => {
     if (process.env.NODE_ENV === "production") {
-      Fathom.load();
-      Fathom.setSiteId("PJBXYUKP");
+      Fathom.load("PJBXYUKP");
       Fathom.trackPageview();
     }
   }, []);
