@@ -46,7 +46,7 @@ export default function Section({
           <Text tag="p" variant="heading-sm">
             {heading}
           </Text>
-          {body && <Html>{body}</Html>}
+          {body && <Html noMargin>{body}</Html>}
         </div>
       </div>
     </section>
