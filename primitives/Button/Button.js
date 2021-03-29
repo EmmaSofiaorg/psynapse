@@ -2,6 +2,7 @@ import cn from "../../utils/classnames";
 import "./Button.css";
 
 export default function Button({
+  full,
   variant = "",
   onClick = () => null,
   children,
@@ -11,6 +12,7 @@ export default function Button({
       onClick={onClick}
       className={cn({
         button: true,
+        "button--full": full,
         [`button--${variant}`]: variant,
       })}
     >

@@ -22,8 +22,7 @@ export default function Section({
   label,
   heading,
   body,
-  linkText,
-  linkTo,
+  imageUrl,
 }) {
   const classNames = cn({
     section: true,
@@ -36,7 +35,7 @@ export default function Section({
       <div className="section__wrapper">
         <div className="section__image">
           <div className="section__image-wrapper">
-            {Illustration[illustration]}
+            {Illustration[illustration] || <img src={imageUrl}></img>}
           </div>
         </div>
         <div className="section__text">

@@ -8,6 +8,7 @@ import cn from "../../utils/classnames";
 import "./Html.css";
 import Text from "../Text";
 import Link from "../Link";
+import Button from "../Button";
 
 function transform(node, index) {
   return (
@@ -24,6 +25,15 @@ const block = {
           transform(child, index, transform)
         )}
       </Text>
+    );
+  },
+  button: (node, index) => {
+    return (
+      <Button variant="primary">
+        {node.children.map((child, index) =>
+          transform(child, index, transform)
+        )}
+      </Button>
     );
   },
   a: (node, index) => {

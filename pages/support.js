@@ -65,6 +65,10 @@ export async function getStaticProps(context) {
                   body
                   variant
                   reverse
+                  image {
+                    id
+                    url
+                  }
                 }
               }
             }

@@ -71,6 +71,7 @@ const blocks = {
       heading={props.subheading}
       variant={props.variant}
       body={props.body}
+      imageUrl={props.image?.url}
       illustration={props.illustration}
       reverse={props.reverse}
     />

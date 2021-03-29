@@ -18,6 +18,10 @@
 .section__image-wrapper {
 }
 
+.section__image-wrapper img {
+  margin: 0 auto;
+}
+
 .section__text {
   display: grid;
   justify-content: center;

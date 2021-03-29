@@ -6,13 +6,17 @@
     "ss04" on, "ss05" on, "cpsp" on, "zero" on, "cv05" on, "cv06" on;
   font-size: var(--fs-heading-sub);
   cursor: pointer;
-  width: 100%;
   padding: 0 var(--space-sm);
   min-height: var(--element-lg);
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   border: 2px solid var(--color-contrast);
+}
+
+.button--full {
+  width: 100%;
+  display: flex;
 }
 
 .button:hover {
@@ -28,4 +32,8 @@
 .button--primary:hover {
   background: var(--color-vibrant-blue-hover);
   color: var(--color-white);
+}
+
+.button a * {
+  text-decoration: none !important;
 }
