@@ -133,7 +133,7 @@ export default function Header() {
                   />
                   <input
                     type="submit"
-                    defaultValue="Meld meg på"
+                    value="Meld meg på"
                     name="subscribe"
                     id="mc-embedded-subscribe"
                     className="header__subscribe-button"

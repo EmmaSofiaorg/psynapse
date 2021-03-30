@@ -84,7 +84,7 @@ export default function DonationBox({ heading = "", ingress = "", body = "" }) {
           />
         )}
 
-        <Button variant="primary" onClick={() => donate()}>
+        <Button full variant="primary" onClick={() => donate()}>
           {loading ? "Vennligst vent..." : "Gi med vipps"}
         </Button>
       </div>

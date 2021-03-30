@@ -6,7 +6,7 @@
     "ss04" on, "ss05" on, "cpsp" on, "zero" on, "cv05" on, "cv06" on;
   font-size: var(--fs-heading-sub);
   cursor: pointer;
-  padding: 0 var(--space-sm);
+  padding: 0 var(--space-md);
   min-height: var(--element-lg);
   display: inline-flex;
   align-items: center;
@@ -34,6 +34,9 @@
   color: var(--color-white);
 }
 
-.button a * {
+.button a *,
+.button a {
+  font-family: inherit;
+  font-size: inherit;
   text-decoration: none !important;
 }
