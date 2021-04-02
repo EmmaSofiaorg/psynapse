@@ -1,0 +1,23 @@
+[[redirects]]
+  from = "https://www.emmasofia.no/*"
+  to = "https://psynapse.no/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://emmasofia.no/*"
+  to = "https://psynapse.no/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.emmasofia.org/*"
+  to = "https://psynapse.no/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://emmasofia.org/*"
+  to = "https://psynapse.no/:splat"
+  status = 301
+  force = true
