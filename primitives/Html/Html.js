@@ -1,87 +1,73 @@
-import React, { useLayoutEffect } from "react";
-import ReactHtmlParser, {
-  processNodes,
-  convertNodeToElement,
-  htmlparser2,
-} from "react-html-parser";
+import React from "react";
+import parse, { domToReact, Element } from "html-react-parser";
 import cn from "../../utils/classnames";
-import "./Html.css";
 import Text from "../Text";
 import Link from "../Link";
 import Button from "../Button";
 
-function transform(node, index) {
-  return (
-    block[node.name]?.(node, index, transform) ||
-    convertNodeToElement(node, index, transform)
-  );
-}
+const children = (node) => domToReact(node.children, options);
 
 const block = {
-  p: (node, index) => {
-    return (
-      <Text key={index} tag="p" variant="body">
-        {node.children.map((child, index) =>
-          transform(child, index, transform)
-        )}
-      </Text>
-    );
-  },
-  button: (node, index) => {
-    return (
-      <Button variant="primary">
-        {node.children.map((child, index) =>
-          transform(child, index, transform)
-        )}
-      </Button>
-    );
-  },
-  a: (node, index) => {
+  p: (node) => (
+    <Text tag="p" variant="body">
+      {children(node)}
+    </Text>
+  ),
+  button: (node) => <Button variant="primary">{children(node)}</Button>,
+  a: (node) => {
+    // A link that is the sole content of its paragraph, or that is trailed by a
+    // literal newline glyph, reads as a standalone call to action and gets an
+    // arrow prefix.
     const isLast =
       (!node.prev && !node.next && node.parent?.name === "p") ||
       (node.next && node.next.data === "↵");
 
     return (
-      <Link key={index} href={node.attribs.href} prefix={isLast ? "→" : null}>
-        {node.children.map((child, index) =>
-          transform(child, index, transform)
-        )}
+      <Link href={node.attribs.href} prefix={isLast ? "→" : null}>
+        {children(node)}
       </Link>
     );
   },
-  h1: (node, index) => (
-    <Text key={index} tag="h1" variant="heading-md">
-      {node.children.map((child, index) => transform(child, index, transform))}
+  h1: (node) => (
+    <Text tag="h1" variant="heading-md">
+      {children(node)}
     </Text>
   ),
-  h2: (node, index) => (
-    <Text key={index} tag="h2" variant="heading-sm">
-      {node.children.map((child, index) => transform(child, index, transform))}
+  h2: (node) => (
+    <Text tag="h2" variant="heading-sm">
+      {children(node)}
     </Text>
   ),
-  h3: (node, index) => (
-    <Text key={index} tag="h3" variant="heading-sub">
-      {node.children.map((child, index) => transform(child, index, transform))}
+  h3: (node) => (
+    <Text tag="h3" variant="heading-sub">
+      {children(node)}
     </Text>
   ),
-  h4: (node, index) => (
-    <Text key={index} tag="h4" variant="ingress">
-      {node.children.map((child, index) => transform(child, index, transform))}
+  h4: (node) => (
+    <Text tag="h4" variant="ingress">
+      {children(node)}
     </Text>
   ),
-  h5: (node, index) => (
-    <Text key={index} tag="h5" variant="label">
-      {node.children.map((child, index) => transform(child, index, transform))}
+  h5: (node) => (
+    <Text tag="h5" variant="label">
+      {children(node)}
     </Text>
   ),
-  h6: (node, index) => (
-    <Text key={index} tag="h6" variant="label">
-      {node.children.map((child, index) => transform(child, index, transform))}
+  h6: (node) => (
+    <Text tag="h6" variant="label">
+      {children(node)}
     </Text>
   ),
 };
 
-export default function Html({ children, columns, style, noMargin }) {
+const options = {
+  replace: (node) => {
+    if (!(node instanceof Element)) return;
+    return block[node.name]?.(node);
+  },
+};
+
+export default function Html({ children: html, columns, style, noMargin }) {
   const classNames = cn({
     html: true,
     "html--no-margin": noMargin,
@@ -90,7 +76,7 @@ export default function Html({ children, columns, style, noMargin }) {
 
   return (
     <div style={style} className={classNames}>
-      {ReactHtmlParser(children, { transform })}
+      {typeof html === "string" ? parse(html, options) : null}
     </div>
   );
 }

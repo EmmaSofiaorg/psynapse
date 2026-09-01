@@ -1,12 +1,17 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import cn from "../../utils/classnames";
-import "./Header.css";
 
 import Text from "../../primitives/Text";
 import Logo from "../../public/assets/illustrations/logo.svg";
-import Input from "../../primitives/Input";
-import Button from "../../primitives/Button";
+
+const MENU_LINKS = [
+  { href: "/", label: "Home" },
+  { href: "/mdma-psykedelika", label: "MDMA og Psykedelika" },
+  { href: "/projects", label: "Prosjekter" },
+  { href: "/support", label: "Støtt oss" },
+  { href: "/about", label: "Om oss" },
+];
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -23,10 +28,12 @@ export default function Header() {
   return (
     <header className={classNames}>
       <div className="header__wrapper">
-        <Link href="/">
-          <a onClick={() => setOpen(false)} className="header__logo">
-            <Logo />
-          </a>
+        <Link
+          href="/"
+          onClick={() => setOpen(false)}
+          className="header__logo"
+        >
+          <Logo />
         </Link>
         <button className="header__menu-button" onClick={() => setOpen(!open)}>
           {open ? "Lukk" : "Meny"}
@@ -34,51 +41,34 @@ export default function Header() {
       </div>
       <div className="header__menu">
         <nav className="header__menu-page-links">
-          <Link href="/">
-            <a
-              className="header__menu-page-link"
-              onClick={() => setOpen(!open)}
-              style={{ "--item-order": 1 }}
-            >
-              Home
-            </a>
-          </Link>
-          <Link href="/mdma-psykedelika">
-            <a
-              className="header__menu-page-link"
-              onClick={() => setOpen(!open)}
-              style={{ "--item-order": 2 }}
-            >
-              MDMA og Psykedelika
-            </a>
-          </Link>
-          <Link href="/projects">
-            <a
-              className="header__menu-page-link"
-              onClick={() => setOpen(!open)}
-              style={{ "--item-order": 2 }}
-            >
-              Prosjekter
-            </a>
-          </Link>
-          <Link href="/support">
-            <a
-              className="header__menu-page-link"
-              onClick={() => setOpen(!open)}
-              style={{ "--item-order": 4 }}
-            >
-              Støtt oss
-            </a>
-          </Link>
-          <Link href="/about">
-            <a
-              className="header__menu-page-link"
-              onClick={() => setOpen(!open)}
-              style={{ "--item-order": 5 }}
-            >
-              Om oss
-            </a>
-          </Link>
+          {MENU_LINKS.map(({ href, label, external }, index) => {
+            // Drives the staggered entry animation in Header.css.
+            const style = { "--item-order": index + 1 };
+
+            return external ? (
+              <a
+                key={href}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="header__menu-page-link"
+                style={style}
+                onClick={() => setOpen(false)}
+              >
+                {label}
+              </a>
+            ) : (
+              <Link
+                key={href}
+                href={href}
+                className="header__menu-page-link"
+                style={style}
+                onClick={() => setOpen(false)}
+              >
+                {label}
+              </Link>
+            );
+          })}
         </nav>
         <div>
           <Text tag="p" variant="body">
@@ -101,7 +91,7 @@ export default function Header() {
                   <path
                     d="M66.9933 6.98997L45.1057 1.03637L23.218 6.98997L7.18845 23.2624L1.31878 45.5L7.18846 67.7377L23.2181 84.0101L45.1057 89.9637L66.9933 84.0101L83.0229 67.7377L88.8926 45.5L83.0229 23.2624L66.9933 6.98997Z"
                     stroke="var(--color-white)"
-                    stroke-width="2"
+                    strokeWidth="2"
                   />
                 </svg>
               ))}
@@ -117,7 +107,7 @@ export default function Header() {
                 id="mc-embedded-subscribe-form"
                 name="mc-embedded-subscribe-form"
                 target="_blank"
-                noValidate="novalidate"
+                noValidate
                 className="validate"
                 data-np-checked="1"
               >
@@ -127,7 +117,7 @@ export default function Header() {
                     name="EMAIL"
                     id="mce-EMAIL"
                     placeholder="Din epostadresse"
-                    required="required"
+                    required
                     className="header__subscribe-input"
                     data-np-checked="1"
                   />
@@ -143,7 +133,7 @@ export default function Header() {
                   <input
                     type="text"
                     name="b_d738f7fcdd8533e9b2fc684a8_e22eb01ef0"
-                    tabindex="-1"
+                    tabIndex="-1"
                     hidden
                     data-np-checked="1"
                   />

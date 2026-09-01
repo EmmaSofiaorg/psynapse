@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import "./DonationBox.css";
 import Text from "../../primitives/Text";
 import Input from "../../primitives/Input";
 import ButtonGroup from "../../primitives/ButtonGroup";

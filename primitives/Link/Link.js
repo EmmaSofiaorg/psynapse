@@ -1,7 +1,7 @@
 import React from "react";
 import NextLink from "next/link";
 import cn from "../../utils/classnames";
-import "./Link.css";
+import isInternalHref from "../../utils/isInternalHref";
 
 export default function Link({
   href = "",
@@ -17,13 +17,31 @@ export default function Link({
     "link--full": full,
   });
 
-  return (
-    <NextLink href={href}>
-      <a style={style} target={target} className={classNames}>
-        {prefix && <span className="link__prefix">{prefix}</span>}
-        <span className="link__el">{children}</span>
-        {postfix && <span className="link__postfix">{postfix}</span>}
+  const content = (
+    <>
+      {prefix && <span className="link__prefix">{prefix}</span>}
+      <span className="link__el">{children}</span>
+      {postfix && <span className="link__postfix">{postfix}</span>}
+    </>
+  );
+
+  if (!isInternalHref(href)) {
+    return (
+      <a
+        href={href || undefined}
+        style={style}
+        target={target}
+        rel={target === "_blank" ? "noopener noreferrer" : undefined}
+        className={classNames}
+      >
+        {content}
       </a>
+    );
+  }
+
+  return (
+    <NextLink href={href} style={style} target={target} className={classNames}>
+      {content}
     </NextLink>
   );
 }

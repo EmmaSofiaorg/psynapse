@@ -1,6 +1,7 @@
 import Head from "next/head";
 import { createSubscription } from "../../services/dato";
-import { renderMetaTags, useQuerySubscription } from "react-datocms";
+import { useQuerySubscription } from "react-datocms/use-query-subscription";
+import { renderMetaTags } from "react-datocms/seo";
 
 import Container from "../../primitives/Container";
 import Text from "../../primitives/Text";
@@ -9,7 +10,6 @@ import Blocks from "../../components/Blocks";
 
 import Drugs from "../../public/assets/illustrations/drugs.svg";
 
-import "./project-layout.css";
 
 const Illustration = {
   drugs: <Drugs />,

@@ -1,5 +1,4 @@
 import cn from "../../utils/classnames";
-import "./Button.css";
 
 export default function Button({
   full,

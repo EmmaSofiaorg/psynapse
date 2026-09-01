@@ -1,6 +1,5 @@
 import React from "react";
 import cn from "../../utils/classnames";
-import "./Input.css";
 
 export default function Input({
   full,

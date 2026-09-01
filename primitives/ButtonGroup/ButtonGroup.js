@@ -1,5 +1,4 @@
 import cn from "../../utils/classnames";
-import "./ButtonGroup.css";
 
 export default function ButtonGroup({
   options = [],

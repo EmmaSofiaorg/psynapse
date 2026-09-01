@@ -1,6 +1,5 @@
 import React from "react";
 import cn from "../../utils/classnames";
-import "./Text.css";
 
 export default function Text({
   tag = "div",

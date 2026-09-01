@@ -1,6 +1,7 @@
 import Head from "next/head";
 import { createSubscription } from "../services/dato";
-import { useQuerySubscription, renderMetaTags } from "react-datocms";
+import { useQuerySubscription } from "react-datocms/use-query-subscription";
+import { renderMetaTags } from "react-datocms/seo";
 
 import Hero from "../components/Hero";
 import Blocks from "../components/Blocks";
@@ -71,9 +72,7 @@ export async function getStaticProps(context) {
 }
 
 export default function Home({ subscription }) {
-  const { data, error, status } = useQuerySubscription(subscription);
-
-  console.log({ data, error, status });
+  const { data } = useQuerySubscription(subscription);
 
   return (
     <div>
