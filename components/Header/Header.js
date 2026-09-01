@@ -9,6 +9,11 @@ const MENU_LINKS = [
   { href: "/", label: "Home" },
   { href: "/mdma-psykedelika", label: "MDMA og Psykedelika" },
   { href: "/projects", label: "Prosjekter" },
+  {
+    href: "https://portal.smartorg.no/action/reg/a62dfb78",
+    label: "Bli medlem",
+    external: true,
+  },
   { href: "/support", label: "Støtt oss" },
   { href: "/about", label: "Om oss" },
 ];
