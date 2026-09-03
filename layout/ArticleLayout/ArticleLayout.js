@@ -2,7 +2,6 @@ import Head from "next/head";
 
 import Container from "../../primitives/Container";
 
-import "./ArticleLayout.css";
 
 export default function ArticleLayout({ sidebar, header, children }) {
   return (

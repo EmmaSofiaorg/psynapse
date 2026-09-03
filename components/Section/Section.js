@@ -1,6 +1,5 @@
 import React from "react";
 import cn from "../../utils/classnames";
-import "./Section.css";
 import CircleGrid from "../../public/assets/illustrations/circle-grid.svg";
 import Thingy from "../../public/assets/illustrations/thingy.svg";
 import LSD from "../../public/assets/illustrations/lsd.svg";

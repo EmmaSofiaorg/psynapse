@@ -1,7 +1,7 @@
 import React from "react";
 import cn from "../../utils/classnames";
 import Link from "next/link";
-import "./ProjectList.css";
+import isInternalHref from "../../utils/isInternalHref";
 import SimpleCircle from "../../public/assets/illustrations/simple-circle.svg";
 
 import Text from "../../primitives/Text";
@@ -30,22 +30,32 @@ export default function ProjectList({ heading, ingress, body, items = [] }) {
             ? `/projects/${item.slug}`
             : item.url || "";
 
+          const inner = (
+            <>
+              <div className="project-list-item__counter">
+                <SimpleCircle />
+              </div>
+              <h2 className="project-list-item__title">{item.headingShort}</h2>
+              <div className="project-list-item__arrow"></div>
+            </>
+          );
+
           return (
             <li className={classNames} key={i}>
-              <Link href={href}>
+              {isInternalHref(href) ? (
+                <Link href={href} className="project-list-item__wrapper">
+                  {inner}
+                </Link>
+              ) : (
                 <a
-                  target={item.readMore ? "" : "_blank"}
+                  href={href || undefined}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="project-list-item__wrapper"
                 >
-                  <div className="project-list-item__counter">
-                    <SimpleCircle />
-                  </div>
-                  <h2 className="project-list-item__title">
-                    {item.headingShort}
-                  </h2>
-                  <div className="project-list-item__arrow"></div>
+                  {inner}
                 </a>
-              </Link>
+              )}
             </li>
           );
         })}

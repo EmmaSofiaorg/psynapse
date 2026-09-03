@@ -1,6 +1,5 @@
 import Head from "next/head";
-import { createSubscription } from "../../services/dato";
-import { useQuerySubscription } from "react-datocms";
+import { createSubscription, useQuerySubscription } from "../../services/dato";
 
 import Hero from "../../components/Hero";
 import ProjectList from "../../components/ProjectList";

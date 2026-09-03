@@ -1,5 +1,4 @@
 import React from "react";
-import "./Footer.css";
 import Link from "../../primitives/Link";
 import Logo from "../../public/assets/illustrations/logo.svg";
 

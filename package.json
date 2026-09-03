@@ -8,18 +8,15 @@
     "start": "next start"
   },
   "dependencies": {
-    "@zeit/next-css": "^1.0.1",
-    "fathom-client": "^3.0.0",
-    "nanoid": "^3.1.20",
-    "next": "10.0.3",
-    "react": "^16.13.0",
-    "react-datocms": "^1.4.5",
-    "react-dom": "^16.13.0",
-    "react-html-parser": "^2.0.2"
+    "fathom-client": "^3.7.2",
+    "html-react-parser": "^5.2.17",
+    "nanoid": "^3.3.11",
+    "next": "^15.5.4",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
   },
   "devDependencies": {
-    "@svgr/webpack": "^5.5.0",
-    "file-loader": "^6.2.0",
-    "url-loader": "^4.1.1"
+    "@netlify/plugin-nextjs": "^5.15.13",
+    "@svgr/webpack": "^8.1.0"
   }
 }

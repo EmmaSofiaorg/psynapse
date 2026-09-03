@@ -98,16 +98,13 @@ async function donateMonthly({ amount }) {
 export default async function handler(req, res) {
   const { amount, method } = req.body;
 
-  console.log("tying  to call" + API_URL);
-
   if (method === "once") {
     donateOnce({ amount })
       .then((response) => {
-        console.log(response);
         res.end(JSON.stringify({ url: response.url }));
       })
       .catch((e) => {
-        console.log(e.message);
+        console.error("Vipps single donation failed:", e.message);
         const error = new Error();
         error.message = "Unable to fetch!";
         res.status(500).end(error.toString());
@@ -115,11 +112,10 @@ export default async function handler(req, res) {
   } else if (method === "monthly") {
     donateMonthly({ amount })
       .then((response) => {
-        console.log(response);
         res.end(JSON.stringify({ url: response.vippsConfirmationUrl }));
       })
       .catch((e) => {
-        console.log(e.message);
+        console.error("Vipps recurring donation failed:", e.message);
         const error = new Error();
         error.message = "Unable to fetch!";
         res.status(500).end(error.toString());

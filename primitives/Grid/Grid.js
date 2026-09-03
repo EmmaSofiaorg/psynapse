@@ -1,6 +1,5 @@
 import React from "react";
 import cn from "../../utils/classnames";
-import "./Grid.css";
 
 export function Grid({ children, columns, columnsMobile, gap }) {
   const classes = cn({

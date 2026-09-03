@@ -1,6 +1,5 @@
 import Head from "next/head";
-import { createSubscription } from "../services/dato";
-import { renderMetaTags, useQuerySubscription } from "react-datocms";
+import { createSubscription, useQuerySubscription, renderMetaTags } from "../services/dato";
 
 import Hero from "../components/Hero";
 import Blocks from "../components/Blocks";

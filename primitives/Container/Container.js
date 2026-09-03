@@ -1,6 +1,5 @@
 import React from "react";
 import cn from "../../utils/classnames";
-import "./Container.css";
 
 export default function Container({
   style,

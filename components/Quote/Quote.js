@@ -1,5 +1,4 @@
 import React from "react";
-import "./Quote.css";
 import Text from "../../primitives/Text";
 import Html from "../../primitives/Html";
 import Link from "../../primitives/Link";

@@ -1,0 +1,9 @@
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+# Pinned explicitly rather than relying on Netlify's auto-detection: this project
+# previously ran a legacy Next.js runtime configured in the Netlify UI, and the
+# version is resolved from the @netlify/plugin-nextjs devDependency in package.json.
+[[plugins]]
+  package = "@netlify/plugin-nextjs"

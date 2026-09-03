@@ -1,7 +1,6 @@
 import React from "react";
 import Text from "../../primitives/Text";
 import Link from "../../primitives/Link";
-import "./PersonCard.css";
 
 export default function PersonCard({ name, email, phoneNumber, job, image }) {
   return (
